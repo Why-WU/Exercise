@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0;
+        }
+
+        #menu {
+            width: 620px;
+            height: 40px;
+        }
+
+        #menu li {
+            width: 150px;
+            height: 40px;
+            float: left;
+            margin-right: 5px;
+            list-style: none;
+            text-align: center;
+            line-height: 40px;
+            background: #ff0000;
+        }
+
+        #menu li a {
+            text-decoration: none;
+            color: #ffffff;
+            display: block;
+
+        }
+
+        #menu li a:hover {
+            background: #ff00ff;
+        }
+
+        #menu .submenu li {
+            background: #00ff00;
+            color: #ffffff;
+            width: 150px;
+            display: none;
+        }
+       #menu li {
+           display: block;
+       }
+
+    </style>
+</head>
+<body>
+<ul id="menu">
+    <li>
+        <a href="#">菜单1</a>
+
+    </li>
+    <li>
+        <a href="#">菜单2</a>
+        <ul class="submenu">
+            <li>子菜单1</li>
+            <li>子菜单2</li>
+            <li>子菜单3</li>
+        </ul>
+    </li>
+    <li><a href="#">菜单3</a></li>
+    <li><a href="#">菜单4</a></li>
+</ul>
+</body>
+</html>
