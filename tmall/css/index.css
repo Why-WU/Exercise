@@ -15,11 +15,11 @@
 }
 
 #quick-menu > li {
-    margin-left: 10px;
+    margin-left: 13px;
 }
 
 #login-info > a {
-    margin-left: 10px;
+    margin-left: 13px;
 }
 
 #quick-menu {
@@ -50,17 +50,19 @@
     color: #ff00ff;
 }
 
+#second-menu{
+    position: absolute;
+    top: 100px;
+}
+
 #second-menu li {
     float: none;
     display:none;
-    /*visibility:hidden;*/
-    /*绝对定位做*/
     background: #f2f2f2;
 }
 
 #quick-menu > li:hover #second-menu li {
     display: block;
-    /*visibility: visible;*/
 }
 
 #triangle{
@@ -72,8 +74,8 @@
     border-right-color: transparent;
     width: 0;
     position: absolute;
-    top: 5px;
-    left:50px;
+    top: 85px;
+    left:960px;
 }
 
 
