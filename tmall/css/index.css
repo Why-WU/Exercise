@@ -1,0 +1,77 @@
+#top {
+    background: #ffc6d9;
+    text-align: center;
+    height: 80px;
+}
+
+#login-info {
+    float: left;
+}
+
+#header {
+    height: 23px;
+    background: #f2f2f2;
+    line-height: 23px;
+}
+
+#quick-menu > li {
+    margin-left: 10px;
+}
+
+#login-info > a {
+    margin-left: 10px;
+}
+
+#quick-menu {
+    float: right;
+}
+
+#quick-menu li {
+    float: left;
+}
+
+#header a, #login-info span {
+    font-size: 12px;
+    color: #b0b2b3;
+}
+
+#header a:hover {
+    color: #f00;
+}
+
+#split {
+    width: 1px;
+    height: 14px;
+    margin-top: 5px;
+    background: #b0b2b3;
+}
+
+#quick-menu li i {
+    color: #ff00ff;
+}
+
+#second-menu li {
+    float: none;
+    display:none;
+    /*visibility:hidden;*/
+    /*绝对定位做*/
+    background: #f2f2f2;
+}
+
+#quick-menu > li:hover #second-menu li {
+    display: block;
+    /*visibility: visible;*/
+}
+
+#triangle{
+    border: 5px;
+    border-style: solid;
+    border-top-color:transparent ;
+    border-bottom-color: #f0f;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    width: 0;
+    position: relative;
+    top: 4px;
+    left: 50px;
+}

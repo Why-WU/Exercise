@@ -16,3 +16,9 @@ li{
 img{
     border:0;
 }
+
+.wrapper{
+    width: 1230px;
+    height: 100%;
+    margin: 0 auto;
+}
