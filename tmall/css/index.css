@@ -71,7 +71,9 @@
     border-left-color: transparent;
     border-right-color: transparent;
     width: 0;
-    position: relative;
-    top: 4px;
-    left: 50px;
+    position: absolute;
+    top: 5px;
+    left:50px;
 }
+
+
