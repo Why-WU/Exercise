@@ -9,17 +9,25 @@
 }
 
 #header {
-    height: 23px;
+    height: 35px;
     background: #f2f2f2;
-    line-height: 23px;
+    line-height: 35px;
 }
 
 #quick-menu > li {
-    margin-left: 13px;
+    padding: 0 13px;
+    cursor: pointer;
+    position: relative;
+
 }
 
 #login-info > a {
-    margin-left: 13px;
+    padding: 0 15px;
+}
+
+#quick-menu .use-triangle:hover{
+    background: #ffffff;
+
 }
 
 #quick-menu {
@@ -35,15 +43,20 @@
     color: #b0b2b3;
 }
 
+#quick-menu li:hover>a{
+    color: #ff0000;
+}
+
 #header a:hover {
     color: #f00;
 }
 
-#split {
+#quick-menu .split {
     width: 1px;
     height: 14px;
-    margin-top: 5px;
+    margin: 9px 0 0 14px;
     background: #b0b2b3;
+    padding: 0;
 }
 
 #quick-menu li i {
@@ -52,30 +65,118 @@
 
 #second-menu{
     position: absolute;
-    top: 100px;
+    top: 100%;
+    left: 0;
 }
 
 #second-menu li {
     float: none;
     display:none;
-    background: #f2f2f2;
+    background: #f0f;
+    width: 102px;
 }
+
 
 #quick-menu > li:hover #second-menu li {
     display: block;
 }
 
-#triangle{
-    border: 5px;
+
+#quick-menu .use-triangle::after{
+    content: '';
+    border: 3px;
     border-style: solid;
-    border-top-color:transparent ;
-    border-bottom-color: #f0f;
-    border-left-color: transparent;
-    border-right-color: transparent;
+    border-color: #f0f transparent transparent transparent;
     width: 0;
     position: absolute;
-    top: 85px;
-    left:960px;
+    top: 50%;
+    margin-top: -1.5px;
+    right: 5px;
+}
+
+#quick-menu .use-triangle:hover::after{
+    transform: rotate(180deg);
+    transform-origin: 3px 1.5px;
+    transition: transform .5s ease;
+}
+
+#square{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+}
+
+#quick-menu li:hover li{
+    display: block;
+}
+
+ #square1{
+     background: #000;
+     width: 100px;
+     height: 110px;
+     position: relative;
+ }
+
+#square2{
+    background: #000;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    margin-left: -20px;
+    transform: rotate(45deg);
+}
+
+#square3{
+    background: #0acaf0;
+    width: 70px;
+    height: 70px;
+    font-size: 1px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -35px;
+    margin-top: -35px;
+}
+
+#quick-menu .use-triangle .merchant {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 110px;
+    background: #ff00bb;
+    cursor: auto;
+    display: none;
+
+}
+
+#quick-menu li:hover .merchant{
+    display: block;
+}
+
+#quick-menu .merchant div a,h3{
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+}
+#quick-menu .merchant> div a{
+    display:block;
+
+}
+#quick-menu div{
+    float: left;
+}
+
+#quick-menu .merchant-list2{
+    margin-left: 30px;
+}
+
+#quick-menu .cut{
+    border-color: #b0b2b3 transparent transparent transparent;
+    border-style: dashed;
+    width: 100px;
+    clear: none;
 }
 
 
