@@ -1,3 +1,4 @@
+/* header 开始 */
 #top {
     background: #ffc6d9;
     text-align: center;
@@ -12,6 +13,7 @@
     height: 35px;
     background: #f2f2f2;
     line-height: 35px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.30);
 }
 
 #quick-menu > li {
@@ -25,9 +27,13 @@
     padding: 0 15px;
 }
 
+#quick-menu .use-triangle{
+    border: 1px transparent;
+}
+
 #quick-menu .use-triangle:hover{
     background: #ffffff;
-
+    border-color: transparent #cccccc transparent #cccccc;
 }
 
 #quick-menu {
@@ -178,5 +184,9 @@
     width: 100px;
     clear: none;
 }
+/* header 结束 */
 
+/* logo-search 开始 */
+
+/* logo-search 开始 */
 
