@@ -7,12 +7,13 @@
 
 #login-info {
     float: left;
+    line-height: 38px;
 }
 
 #header {
-    height: 35px;
+    height: 38px;
     background: #f2f2f2;
-    line-height: 35px;
+    line-height: 38px;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.30);
 }
 
@@ -28,7 +29,7 @@
 }
 
 #quick-menu .use-triangle{
-    border: 1px transparent;
+    border: 1px transparent solid ;
 }
 
 #quick-menu .use-triangle:hover{
@@ -72,19 +73,22 @@
 #second-menu{
     position: absolute;
     top: 100%;
-    left: 0;
+    left: -1px;
 }
 
 #second-menu li {
     float: none;
     display:none;
-    background: #f0f;
-    width: 102px;
+    background: #fff;
+    width: 75px;
+    padding: 0 14px;
+    border: 1px transparent solid;
 }
 
 
 #quick-menu > li:hover #second-menu li {
     display: block;
+    border-color: transparent #cccccc #cccccc #cccccc;
 }
 
 
@@ -187,6 +191,43 @@
 /* header 结束 */
 
 /* logo-search 开始 */
+
+#logo-search{
+    margin-top: 6px;
+}
+
+#logo{
+    float: left;
+}
+
+#search{
+    float: left;
+    margin-top: 38px;
+}
+
+#search form{
+    width: 625px;
+    height: 36px;
+    border: 2px #ff0036 solid;
+    line-height: 36px;
+}
+
+#search .search-ipt{
+    height: 36px;
+    width: 480px;
+    border: none;
+    outline: none;
+    float: left;
+    text-indent: 4px;
+}
+
+#search .search-btn{
+    height: 36px;
+    width: 120px;
+    border: none;
+    outline: none;
+    float: right;
+}
 
 /* logo-search 开始 */
 
