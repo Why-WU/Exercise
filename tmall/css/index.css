@@ -210,11 +210,13 @@
     height: 36px;
     border: 2px #ff0036 solid;
     line-height: 36px;
+    padding: 1px;
+    background: #ff0036;
 }
 
 #search .search-ipt{
     height: 36px;
-    width: 480px;
+    width: 500px;
     border: none;
     outline: none;
     float: left;
@@ -223,10 +225,14 @@
 
 #search .search-btn{
     height: 36px;
-    width: 120px;
+    width: 124px;
     border: none;
     outline: none;
     float: right;
+    background: #ff0036;
+    color: #ffffff;
+    letter-spacing: 5px;
+    font-size: 20px;
 }
 
 /* logo-search 开始 */
