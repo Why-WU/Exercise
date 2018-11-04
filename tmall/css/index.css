@@ -301,10 +301,93 @@
 
 #banner .category-tab{
     position: absolute;
-    top: -50px;
+    top: -36px;
+    left: 0;
+    width: 200px;
+    height: 500px;
+    background: rgba(0,0,0,.55);
 }
 
 #banner .category-item{
     float: left;
+
 }
+
+#banner .category-item>a{
+    height: 36px;
+    line-height: 36px;
+}
+
+#banner .category li{
+    height: 36px;
+}
+
+#banner .category{
+    position: absolute;
+    top: 36px;
+    left: 0;
+    width: 200px;
+    display: none;
+}
+
+#banner .category-item:hover .category{
+    display: block;
+}
+
+#banner .item1{
+    width: 100px;
+    color: #FF0036;
+    background: rgba(238,238,238,.95);
+    display: block;
+
+}
+
+#banner .item2{
+    background: #FF0036;
+    color: #ffe013;
+    width: 100px;
+    display: block;
+}
+
+#banner .category a{
+    color: #fff;
+}
+
+#banner .category11 li{
+    width: 152px;
+    height: 31px;
+    border: 1px solid #FF0036;
+    border-radius: 10px;
+    line-height: 31px;
+    margin: 20px auto
+}
+
+#banner .small-banner{
+    width: 220px;
+    height: 235px;
+    background: rgba(255,255,255,.7);
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+#banner .slider-nav li{
+    width: 25px;
+    height: 5px;
+    background: #000;
+    opacity: .3;
+    filter: alpha(opacity=30);
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#banner .slider-nav{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 30px;
+}
+
+
 /* banner 结束 */
