@@ -14,7 +14,7 @@
     height: 38px;
     background: #f2f2f2;
     line-height: 38px;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.30);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.30);
 }
 
 #quick-menu > li {
@@ -28,11 +28,11 @@
     padding: 0 15px;
 }
 
-#quick-menu .use-triangle{
-    border: 1px transparent solid ;
+#quick-menu .use-triangle {
+    border: 1px transparent solid;
 }
 
-#quick-menu .use-triangle:hover{
+#quick-menu .use-triangle:hover {
     background: #ffffff;
     border-color: transparent #cccccc transparent #cccccc;
 }
@@ -50,7 +50,7 @@
     color: #b0b2b3;
 }
 
-#quick-menu li:hover>a{
+#quick-menu li:hover > a {
     color: #ff0000;
 }
 
@@ -70,7 +70,7 @@
     color: #ff00ff;
 }
 
-#second-menu{
+#second-menu {
     position: absolute;
     top: 100%;
     left: -1px;
@@ -78,21 +78,19 @@
 
 #second-menu li {
     float: none;
-    display:none;
+    display: none;
     background: #fff;
     width: 75px;
     padding: 0 14px;
     border: 1px transparent solid;
 }
 
-
 #quick-menu > li:hover #second-menu li {
     display: block;
     border-color: transparent #cccccc #cccccc #cccccc;
 }
 
-
-#quick-menu .use-triangle::after{
+#quick-menu .use-triangle::after {
     content: '';
     border: 3px;
     border-style: solid;
@@ -104,31 +102,31 @@
     right: 5px;
 }
 
-#quick-menu .use-triangle:hover::after{
+#quick-menu .use-triangle:hover::after {
     transform: rotate(180deg);
     transform-origin: 3px 1.5px;
     transition: transform .5s ease;
 }
 
-#square{
+#square {
     position: absolute;
     top: 100%;
     left: 0;
     display: none;
 }
 
-#quick-menu li:hover li{
+#quick-menu li:hover li {
     display: block;
 }
 
- #square1{
-     background: #000;
-     width: 100px;
-     height: 110px;
-     position: relative;
- }
+#square1 {
+    background: #000;
+    width: 100px;
+    height: 110px;
+    position: relative;
+}
 
-#square2{
+#square2 {
     background: #000;
     width: 40px;
     height: 40px;
@@ -138,7 +136,7 @@
     transform: rotate(45deg);
 }
 
-#square3{
+#square3 {
     background: #0acaf0;
     width: 70px;
     height: 70px;
@@ -161,51 +159,55 @@
 
 }
 
-#quick-menu li:hover .merchant{
+#quick-menu li:hover .merchant {
     display: block;
 }
 
-#quick-menu .merchant div a,h3{
+#quick-menu .merchant div a, h3 {
     height: 20px;
     line-height: 20px;
     font-size: 12px;
 }
-#quick-menu .merchant> div a{
-    display:block;
+
+#quick-menu .merchant > div a {
+    display: block;
 
 }
-#quick-menu div{
+
+#quick-menu div {
     float: left;
 }
 
-#quick-menu .merchant-list2{
+#quick-menu .merchant-list2 {
     margin-left: 30px;
 }
 
-#quick-menu .cut{
+#quick-menu .cut {
     border-color: #b0b2b3 transparent transparent transparent;
     border-style: dashed;
     width: 100px;
     clear: none;
 }
+
 /* header 结束 */
 
 /* logo-search 开始 */
 
-#logo-search{
+#logo-search {
     margin-top: 6px;
+    height: 135px;
 }
 
-#logo{
+#logo {
     float: left;
 }
 
-#search{
+#search {
     float: left;
     margin-top: 38px;
 }
 
-#search form{
+#search form {
     width: 625px;
     height: 36px;
     border: 2px #ff0036 solid;
@@ -214,7 +216,7 @@
     background: #ff0036;
 }
 
-#search .search-ipt{
+#search .search-ipt {
     height: 36px;
     width: 500px;
     border: none;
@@ -223,7 +225,7 @@
     text-indent: 4px;
 }
 
-#search .search-btn{
+#search .search-btn {
     height: 36px;
     width: 124px;
     border: none;
@@ -235,28 +237,74 @@
     font-size: 20px;
 }
 
-#search .hot-query{
+#search .hot-query {
     margin-top: 4px;
 }
 
-#search .hot{
+#search .hot {
     float: left;
     border-right: 1px solid #999;
     padding: 0 12px;
 }
 
-#search .hot a{
+#search .hot a {
     color: #999;
     font-size: 14px;
 }
 
-#search .hot-query-highlight a{
+#search .hot-query-highlight a {
     color: #FF0036;
 }
 
-#search .last{
+#search .last {
     border-right: none;
 }
 
 /* logo-search 开始 */
 
+/* main-nav 开始 */
+
+#main-nav .nav {
+    height: 36px;
+    line-height: 36px;
+    margin-left: 200px;
+}
+
+#main-nav .nav > li:hover a{
+    color: #FF0036;
+}
+
+#main-nav .nav > li {
+    float: left;
+}
+
+#main-nav .nav-img{
+    width: 100px;
+    margin-top: 3px;
+}
+
+#main-nav .nav a{
+    color: #000000;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 0 8px;
+    line-height: 16px;
+}
+/* main-nav 结束 */
+
+/* banner 开始 */
+#banner .wrapper{
+    text-align: center;
+    position: relative;
+    background: #6934ff;
+}
+
+#banner .category-tab{
+    position: absolute;
+    top: -50px;
+}
+
+#banner .category-item{
+    float: left;
+}
+/* banner 结束 */
