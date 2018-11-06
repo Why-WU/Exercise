@@ -505,3 +505,22 @@ body{
 }
 
 /* brand-list 结束 */
+
+/* tmallmarket 开始 */
+
+#tmallmarket .tmimg{
+    float: left;
+    width: 214px;
+    height: 25px;
+
+}
+
+#tmallmarket .tmlist{
+    float: right;
+}
+
+#tmallmarket .tmlist li{
+    display: inline;
+}
+
+/* tmallmarket 结束 */
