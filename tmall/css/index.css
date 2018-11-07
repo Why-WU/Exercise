@@ -520,7 +520,12 @@ body{
 }
 
 #tmallmarket .tmlist li{
-    display: inline;
+    float: left;
+    padding: 0 0 0 14px;
 }
 
+.tmmimg{
+    width: 215px;
+    height: 618px;
+}
 /* tmallmarket 结束 */
