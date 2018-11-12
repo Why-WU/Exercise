@@ -1,4 +1,8 @@
+
+
+
 /* header 开始 */
+
 body{
     height: 2000px;
 }
@@ -508,6 +512,10 @@ body{
 
 /* tmallmarket 开始 */
 
+#tmallmarket .wrapper{
+    position: relative;
+}
+
 #tmallmarket .tmimg{
     float: left;
     width: 214px;
@@ -524,8 +532,58 @@ body{
     padding: 0 0 0 14px;
 }
 
+#tmallmarket .tmlist li{
+    cursor: pointer;
+}
+
+.tmmarketimg{
+    position: relative;
+}
+
 .tmmimg{
     width: 215px;
     height: 618px;
+    position: absolute;
+    top: 30px;
+    left: 0;
 }
+
+#today{
+    width: 400px;
+    height: 50px;
+    text-align: center;
+   line-height: 50px;
+   font-size: 18px;
+   position: absolute;
+   top:30px;
+   left: 220px;
+   
+}
+
+.today1{
+    float: left;
+    width: 200px;
+    height: 50px;
+    background: #c2c2c2;
+}
+
+.today2{
+    float: right;
+    width: 200px;
+    height: 50px;
+    background: #c2c2c2;
+}
+
+.today{    
+   color: #000;
+   display: block;   
+}
+
+
+.today:hover{
+    color: #fff;
+    background: #0ff00f;
+}
+
+
 /* tmallmarket 结束 */
