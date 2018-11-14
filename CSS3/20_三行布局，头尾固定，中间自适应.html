@@ -1,15 +1,106 @@
-
 <!-- 头尾固定定位，中间用抻开的方式，用overflow属性控制滚动 -->
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        #top{
+            width: 100%;
+            height: 50px;
+            background: #ff0000;
+            position: fixed;
+            top: 0;
+
+        }
+        #bottom{
+            width: 100%;
+            height: 50px;
+            background: #ff0000;
+            position: fixed;
+            bottom: 0;
+        }
+        #center{
+            background: #cccccc;
+            /* margin-top: 50px;
+            margin-bottom: 50px; */
+            position: absolute;
+            top: 50px;
+            bottom: 50px;
+            left: 0;
+            right: 0;
+            overflow: scroll;
+        }
+    </style>
+
 </head>
+
 <body>
-    
+    <div id="top">标题</div>
+    <div id="center">
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+        <p>内容</p>
+    </div>
+    <div id="bottom">结尾</div>
 </body>
+
 </html>
