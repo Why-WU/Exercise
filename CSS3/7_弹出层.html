@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #mask {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 0, 0, .5)
+        }
+
+        #div2 {
+            width: 200px;
+            height: 200px;
+            background: #000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+
+        #text {
+            color: #ffffff;
+            font-size: 20px;
+            margin-top: 100px;
+            margin-left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mask">
+        <div id="div2">
+            <div id="text">提示</div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -11,35 +11,39 @@
             margin: 0;
         }
 
-        /* 第一种 用浮动做 */
-        #left {
-            float: left;
-            width: 300px;
+        /* 第三种 用绝对定位做 */
+        .box {
             height: 400px;
-            background: #ff00ff;
+        }
+
+        #left {
+            width: 300px;
+            background: #ff0000;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
         #right {
-            float: right;
             width: 300px;
-            height: 400px;
-            background: #00ff00;
+            background: #0000ff;
+            position: absolute;
+            top: 0;
+            right: 0;
         }
 
         #center {
-            background: #000;
+            background: #00ff00;
             margin: 0 310px;
-            height: 400px;
         }
     </style>
+
 </head>
 
 <body>
-    <!-- 注意顺序，先让左右浮动，再控制中间的 -->
-    <div id="left"></div>
-    <div id="right"></div>
-    <div id="center"></div>
-
+    <div id="left" class="box"></div>
+    <div id="center" class="box"></div>
+    <div id="right" class="box"></div>
 </body>
 
 </html>

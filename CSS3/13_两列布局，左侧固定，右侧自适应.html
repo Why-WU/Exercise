@@ -5,32 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-
 <style>
-    #div1{
-        width: 400px;
-        height: 400px;
-        background: #ff0000;
+      body{
+            margin: 0;
+        }
+ /* 第一种  弹性盒模型 */
+    #main{
         display: flex;
-        align-items: center;
-        justify-content: center; 
     }
-    #div2{
-        width: 200px;
-        height: 200px;
+    #left{
+        background: #ff0000;
+        width: 300px;
+        height: 400px;
+    }
+    #right{
         background: #00ff00;
-      
+        height: 400px;
+        flex: 1;
     }
 </style>
 
-
 </head>
 <body>
-
-    <div id="div1">
-        <div id="div2"></div>
+    <div id="main">
+        <div id="left"></div>
+        <div id="right"></div>
     </div>
-    
-
 </body>
 </html>

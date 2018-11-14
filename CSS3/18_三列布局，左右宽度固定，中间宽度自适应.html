@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+      /* 第二种 用弹性盒模型做 */
+        .box {
+            height: 400px;
+        }
+
+        #main {
+            display: flex;
+        }
+
+        #center {
+            background: #00ff00;
+            margin: 0 10px;
+            flex-grow: 1;
+        }
+
+        #left {
+            width: 300px;
+            background: #ff0000;
+        }
+
+        #right {
+            width: 300px;
+            background: #0000ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="left" class="box"></div>
+        <div id="center" class="box"></div>
+        <div id="right" class="box"></div>
+    </div>
+</body>
+
+</html>

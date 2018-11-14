@@ -6,40 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
     <style>
         body {
             margin: 0;
         }
 
-        /* 第一种 用浮动做 */
+        /* 第三种 浮动 */
         #left {
-            float: left;
+            background: #ff0000;
             width: 300px;
             height: 400px;
-            background: #ff00ff;
+            float: left;
         }
 
         #right {
-            float: right;
-            width: 300px;
-            height: 400px;
             background: #00ff00;
-        }
-
-        #center {
-            background: #000;
-            margin: 0 310px;
             height: 400px;
+            margin-left: 310px;
         }
     </style>
 </head>
 
 <body>
-    <!-- 注意顺序，先让左右浮动，再控制中间的 -->
-    <div id="left"></div>
-    <div id="right"></div>
-    <div id="center"></div>
-
+        <div id="left"></div>
+        <div id="right"></div>  
 </body>
 
 </html>
