@@ -548,7 +548,7 @@ body{
     left: 0;
 }
 
-#today{
+/* #today{
     width: 400px;
     height: 50px;
     text-align: center;
@@ -585,5 +585,33 @@ body{
     background: #0ff00f;
 }
 
+.todayimg{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 200px;
+} */
+
+.todayhead{
+    background: #f1f1f1;
+    overflow: hidden;
+}
+
+.todaytetail{
+    float: left;
+    width: 191px;
+    height: 51px;
+}
+
+.todaytext{
+    line-height: 51px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.todaytext:hover{
+    background: #00ff00;
+    color: #fff;
+}
 
 /* tmallmarket 结束 */
