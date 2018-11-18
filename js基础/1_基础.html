@@ -39,7 +39,20 @@
             4.不能用关键字，如var是不能用来命名变量的   但是用$或_开头可以，如$div,_this
         命名要尽量'见名知意'，不要起abc等没有意义的名字
 
-        空字符串是false 非空字符串是true 
+        空字符串是false 非空字符串是true
+
+        switch是严格的匹配，要判断数据类型是否匹配 
+
+        ==判断值是否相等   ===判断值和类型是否都相等
+        !=与==对应   !==与===对应
+
+        条件 ? 如果为真则执行这个 : 如果为假则执行这个         三元运算符(三目运算符) 唯一的一个
+
+        do while循环至少会执行一次   while循环可能一次都不执行
+
+        形参和实参是通过位置进行对应的
+
+        return可以把函数的局部变量返回出来让全局可用
         */
 
 
@@ -91,8 +104,69 @@
         // var e = '5a' - '3';
         // console.log(e);   //NaN   Not a Number
 
-       var num =  window.prompt('请输入一个数字',0);   //没啥用
-       console.log(num);
+        //    var num =  window.prompt('请输入一个数字',0);   //没啥用
+        //    console.log(num);
+
+        // var num = 10;
+        // if(num>5&&num<20){
+
+        // }else{
+
+        // }
+
+
+        // var num = window.prompt('输入一个数', 0);
+        // switch (num) {
+        //     case '3':
+        //         console.log(3);
+        //         break;
+        //     case '4':
+        //         console.log(4);
+        //         break;
+        //     case '5':
+        //         console.log(5);
+        //         break;
+        //     case 'A':
+        //     case 'a':
+        //         console.log('这是a字母');
+        //         break;
+        //     default:
+        //         console.log('默认');
+
+        // }
+
+
+        // for(var i = 1; i < 10; i++){
+        //     console.log(i);
+        // }
+
+        // var i = 1;
+        // while(i < 4){
+        //     console.log(i);
+        //     i++;
+        // }
+
+
+        // var i = 1;
+        // do {
+        //     console.log(i);
+        //     i++;
+        // } while (i < 4);
+
+        // function sum(x, y) {                //形式参数
+        //     var result = x + y;
+        //     // console.log(x + y);
+        //     return result;
+        // }
+        // //sum(2,3);                         //实际参数
+        // var res = sum(2, 3);
+        // console.log(res);
+
+        function getArea(w,h){
+            var area = w * h / 2;
+            return area;
+        }
+   
     </script>
 </body>
 
