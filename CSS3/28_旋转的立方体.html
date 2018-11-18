@@ -6,28 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-<style>
-body{
-    margin: 0;
-}
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            perspective: 1000px;
 
-.div{
-    width: 200px;
-    height: 200px;
-}
+        }
 
-.container{
-    background: #ff0000;
-}
+        .div {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.5);
+            border: #fff solid 1px;
+            border-radius: 5px;
+            font-size: 50px;
+            text-align: center;
+            line-height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
 
+        .container {
+            width: 200px;
+            height: 200px;
+            margin: 200px auto;
+            background: #ff0000;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate 1s linear infinite;
+        }
 
-</style>
+        .one {
+            transform: rotatey(-90deg) translatez(100px);
+        }
+
+        .two {
+            transform: rotatey(90deg) translatez(100px);
+        }
+
+        .three {
+            transform: rotateX(90deg) translatez(100px);
+        }
+
+        .four {
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        .five {
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        .six {
+            transform: translateZ(100px);
+        }
+
+        @keyframes rotate {
+            to {
+                transform: rotateY(360deg);
+                transform-origin: 20px 20px;
+            }
+        }
+    </style>
 
 </head>
 
 <body>
 
-    <div class="div container">
+    <div class="container">
         <div class="div one">1</div>
         <div class="div two">2</div>
         <div class="div three">3</div>
