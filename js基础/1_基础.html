@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <h1>哇哇哇</h1> -->
+
+
+    <script type="text/javascript">
+
+        /*笔记*/
+
+        /*
+        
+        type="text/javascript" 可以省略
+
+        script标签写在body结束的上面
+
+        js是弱类型语言 定义只需要var  var=>variable  一个var可以定义多个变量，用逗号隔开
+
+        js 基本数据类型：
+            1.number
+            2.string
+            3.boolean(布尔型 true/false)
+            4.undefined   undefined的数据类型是undefined 定义变量没有赋初始值就会出现，这不是语法错误
+            5.null
+        数据类型可以转变，直接赋值即可
+
+        变量命名规则：
+            1.不能以数字开头
+            2.不要用中文   不会报错但是不要这样写
+            3.不能用'-'(横杠  连字符)   可以使用驼峰式userName或者'_'(下划线)
+            4.不能用关键字，如var是不能用来命名变量的   但是用$或_开头可以，如$div,_this
+        命名要尽量'见名知意'，不要起abc等没有意义的名字
+
+       空字符串是false 非空字符串是true 
+        */
+
+
+
+
+
+
+        /*示范代码*/
+
+        // document.write('Hello World');
+        // document.write('<h1>Hello World</h1>');
+
+        // var a = 5;
+        // console.log(typeof a); //number
+
+        // var b = 0.5;
+        // console.log(typeof b); //number
+
+        // var c = 'wwww';
+        // console.log(typeof c); //string
+
+        // var d = 'w';
+        // console.log(typeof d); //string
+
+        // var e = true;
+        // console.log(typeof e); //boolean
+
+        // var f;
+        // console.log(typeof f); //undefined
+
+        // var name = 'zs', age = 18, school = '农大'; //一个var可以定义多个变量用逗号隔开
+
+        // var s1 = 'hello';
+        // s1 = s1 + 'world';    //字符串拼接
+        // console.log(s1);
+
+        // var a = 'aa' + 5;
+        // console.log(a);    //string
+
+        // var b = '3' + 5;
+        // console.log(typeof b);  //string
+
+        // var c = 5 - '3';
+        // console.log(c);   //输出2
+
+        // var d = '5' - '3';
+        // console.log(d);   //输出2
+
+        // var e = '5a' - '3';
+        // console.log(e);   //NaN   Not a Number
+
+       var num =  window.prompt('请输入一个数字',0);   //没啥用
+       console.log(num);
+    </script>
+</body>
+
+</html>
