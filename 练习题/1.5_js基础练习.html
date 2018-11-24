@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-
-
+  <body>
     <script>
-        var mul = 1;
-        for (var i = 1; i <= 10; ++i) {
-            mul *= i;
-            console.log(mul);
-        }
+      // var mul = 1;
+      // for (var i = 1; i <= 10; ++i) {
+      //     mul *= i;
+      //     console.log(mul);
+      // }
 
-
+      //递归  n!=n*(n-1)!
+      function factorial2(n){
+          if(n == 1){
+              return 1;                         //递归要有一个出口
+          }
+          return n * factorial2(n-1);
+      };
+      console.log(factorial2);
     </script>
-</body>
-
+  </body>
 </html>
