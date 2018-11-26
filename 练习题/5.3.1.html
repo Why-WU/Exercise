@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--
+      编写一个函数 f(x) = 4x2+3x+2，使用户通过提示对话框输入x的值，能得到相应的计算结果。
+    -->
+
+    <script>
+        
+        /*
+        数学计算要想到  Math  对象
+        
+        */
+
+
+      function fn(x) {
+        return 4 * Math.pow(x, 2) + 3 * x + 2;
+      }
+      var input = window.prompt("输入一个数", 0);
+      var res = fn(input);
+      console.log(res);
+    </script>
+  </body>
+</html>
