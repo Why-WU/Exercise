@@ -27,6 +27,10 @@
         go(num) 具体加载哪一个，上一个就是-1，下一个就是1。
     
     navigator.userAgent 获取当前浏览器的信息
+
+    选择器:
+        document.getElementById('')
+        document.getElementsByTagName('')  生成的是HTMLCollection类数组
     
     */
     </script>
@@ -52,7 +56,12 @@
     // console.log(3);
 
 
-    navigator.userAgent
+   var ua =  navigator.userAgent;
+   if(ua.indexOf('iphone')!=-1){
+       location.href = 'https://h5.m.taobao.com'; 
+   }else{
+       location.href = 'https://www.taobao.com';
+   }
     
     </script>
 </body>

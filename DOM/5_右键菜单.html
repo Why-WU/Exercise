@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #menu {
+        width: 120px;
+        background: #ffffff;
+        position: absolute;
+        border: #000 1px solid;
+        display: none;
+      }
+      #menu li {
+        list-style: none;
+        width: 120px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        border-bottom: dashed #ccc 1px;
+        cursor: pointer;
+      }
+      #menu li:hover {
+        background: #cccccc;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="menu">
+      <li>菜单1</li>
+      <li>菜单2</li>
+      <li>菜单3</li>
+      <li>菜单4</li>
+      <li>菜单5</li>
+    </ul>
+
+    <script>
+      /*
+    this 对于当前内容的引用
+    
+    */
+    </script>
+
+    <script>
+      var oMenu = document.getElementById("menu");
+      var oLi = oMenu.getElementsByTagName("li");
+      document.oncontextmenu = function(e) {   // e是事件对象
+        e = e || window.event; //解决兼容性问题
+        oMenu.style.display = "block";
+        console.log(e.clientX, e.clientY); //获取鼠标右击时的位置，是一个数字
+        oMenu.style.left = e.clientX + "px";
+        oMenu.style.top = e.clientY + "px";
+        // e.preventDefault(); //阻止默认行为   早期IE不支持
+        return false; //阻止浏览器默认行为 所有浏览器都支持，解决了兼容性问题，因为return后面的代码不会执行，
+                          //浏览器默认行为的代码是在其它代码执行完毕之后执行的，所以这个方法可以
+      };
+      document.onclick = function(e) { //点击任意位置取消菜单
+        oMenu.style.display = "none";
+      };
+
+      for (var i = 0; i < oLi.length; i++) {
+        oLi[i].onclick = function() {
+          //   alert(oLi[i]);   //这样不行，for循环执行快速，先执行完了。再点击得到的值是for循环执行完毕i的值。
+          alert(this.innerHTML);
+        };
+      }
+    </script>
+  </body>
+</html>
