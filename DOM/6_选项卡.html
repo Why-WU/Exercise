@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #menu {
+        width: 400px;
+        height: 30px;
+        border: #000 1px solid;
+      }
+
+      #menu li {
+        float: left;
+        list-style: none;
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        background: #cccccc;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+
+      #menu .menu-sel {
+        background: #000000;
+        color: #ffffff;
+      }
+
+      #continer div {
+        width: 400px;
+        height: 300px;
+        border: #000 1px solid;
+        display: none;
+      }
+
+      #continer .continer-sel {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="menu">
+      <li class="menu-sel">html</li>
+      <li>css</li>
+      <li>js</li>
+    </ul>
+
+    <div id="continer">
+      <div class="continer-sel">001</div>
+      <div>002</div>
+      <div>003</div>
+    </div>
+
+    <script>
+      var oMenu = document.getElementById("menu");
+      var aLi = oMenu.getElementsByTagName('li');
+      var oContiner = document.getElementById('continer');
+      var aDiv = oContiner.getElementsByTagName('div');
+      for(var i = 0;i<aLi.length;i++){
+          aLi[i].getINumber = i;                  //获取并保存每个aLi[i]的i的值
+          aLi[i].onclick = function(){
+              for(var j = 0;j<aLi.length;j++){
+                  aLi[j].className='';
+                  aDiv[j].className='';                   //清除原来的样式，点哪个哪个变
+              }                             
+              this.className='menu-sel';
+              aDiv[this.getINumber].className='continer-sel';
+
+          }
+      }
+    </script>
+  </body>
+</html>

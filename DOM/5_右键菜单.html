@@ -43,7 +43,7 @@
 
     <script>
       /*
-    this 对于当前内容的引用
+    this 对于当前对象引用
     
     */
     </script>
@@ -51,19 +51,20 @@
     <script>
       var oMenu = document.getElementById("menu");
       var oLi = oMenu.getElementsByTagName("li");
+      //右键菜单事件
       document.oncontextmenu = function(e) {   // e是事件对象
         e = e || window.event; //解决兼容性问题
         oMenu.style.display = "block";
-        console.log(e.clientX, e.clientY); //获取鼠标右击时的位置，是一个数字
+        // console.log(e.clientX, e.clientY); //获取鼠标右击时的位置，是一个数字
         oMenu.style.left = e.clientX + "px";
         oMenu.style.top = e.clientY + "px";
         // e.preventDefault(); //阻止默认行为   早期IE不支持
-        return false; //阻止浏览器默认行为 所有浏览器都支持，解决了兼容性问题，因为return后面的代码不会执行，
+        return false;     //阻止浏览器默认行为 所有浏览器都支持，解决了兼容性问题，因为return后面的代码不会执行，
                           //浏览器默认行为的代码是在其它代码执行完毕之后执行的，所以这个方法可以
       };
-      document.onclick = function(e) { //点击任意位置取消菜单
-        oMenu.style.display = "none";
-      };
+      document.onclick = function(e) { 
+        oMenu.style.display = "none";              //点击任意位置取消菜单
+      };                    
 
       for (var i = 0; i < oLi.length; i++) {
         oLi[i].onclick = function() {
