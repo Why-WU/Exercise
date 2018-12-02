@@ -7,64 +7,72 @@
     <title>Document</title>
 
     <style>
-    *{
+      * {
         margin: 0;
         padding: 0;
-    }
-    li{
+      }
+      li {
         list-style: none;
-    }
+      }
 
-    #container{
+      #container {
         width: 520px;
         height: 280px;
         margin: 100px auto;
         position: relative;
-    }
+      }
 
-    #imges img{
+      #imges img {
         display: none;
-    }
+      }
 
-    #imges .imges-sel{
+      #imges .imges-sel {
         display: block;
-    }
+      }
 
-    #bottom-button li{
+      #bottom-button li {
         cursor: pointer;
         background: #000;
         color: yellow;
         margin-right: 10px;
         width: 20px;
         text-align: center;
-    }
+      }
 
-    #number li{
+      #num {
         float: right;
-    }
+      }
 
-    #next-back li{
+      #num li {
         float: left;
-    }
+      }
 
-    #bottom-button{
+      #next-back {
+        float: left;
+      }
+
+      #next-back li {
+        float: left;
+      }
+
+      #bottom-button {
         width: 520px;
         position: absolute;
         top: 250px;
         left: 5px;
-    }
+      }
     </style>
   </head>
   <body>
     <div id="container">
       <div id="imges">
-        <img src="img/1.jpg" alt="" / class="imges-sel"> 
+        <img src="img/1.jpg" alt="" / class="imges-sel">
         <img src="img/2.jpg" alt="" />
         <img src="img/3.jpg" alt="" />
         <img src="img/4.jpg" alt="" />
       </div>
       <div id="bottom-button">
-        <ul id="number">
+        <ul id="num">
           <li>1</li>
           <li>2</li>
           <li>3</li>
@@ -77,10 +85,28 @@
       </div>
     </div>
 
-
     <script>
-    var oImges = document.
-    
+      var oImges = document.getElementById("imges");
+      var aImges = document.getElementsByTagName("img");
+      var oNum = document.getElementById("num");
+      var oNumLi = oNum.getElementsByTagName("li");
+      var oNextBack = document.getElementById("next-back");
+      var oNBLi = document.getElementsByTagName("li");
+      for (var i = 0; i < oNumLi.length; i++) {
+        oNumLi[i].getInum = i;
+        oNumLi[i].onmouseover = function() {
+          for (var j = 0; j < oNumLi.length; j++) {
+            // console.log(j);
+            aImges[j].className = " ";
+          }
+          aImges[this.getInum].className = "imges-sel";
+        };
+      }
+      for (var z = 0; z < oNBLi.length; z++) {
+          oNBLi[z].onclick = function(){
+
+          }
+      }
     </script>
   </body>
 </html>
