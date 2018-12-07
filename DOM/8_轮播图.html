@@ -33,7 +33,7 @@
       #bottom-button li {
         cursor: pointer;
         background: #000;
-        color: yellow;
+        color: #fff;
         margin-right: 10px;
         width: 20px;
         text-align: center;
@@ -45,6 +45,10 @@
 
       #num li {
         float: left;
+      }
+
+      #num .num-sel {
+        background: orange;
       }
 
       #next-back {
@@ -67,20 +71,19 @@
     <div id="container">
       <div id="imges">
         <img src="img/1.jpg" alt="" / class="imges-sel">
-        <img src="img/2.jpg" alt="" />
-        <img src="img/3.jpg" alt="" />
+        <img src="img/2.jpg" alt="" /> <img src="img/3.jpg" alt="" />
         <img src="img/4.jpg" alt="" />
       </div>
       <div id="bottom-button">
         <ul id="num">
-          <li>1</li>
+          <li class="num-sel">1</li>
           <li>2</li>
           <li>3</li>
           <li>4</li>
         </ul>
         <ul id="next-back">
-          <li>&lt;</li>
-          <li>&gt;</li>
+          <li id="prev">&lt;</li>
+          <li id="nextv">&gt;</li>
         </ul>
       </div>
     </div>
@@ -90,23 +93,50 @@
       var aImges = document.getElementsByTagName("img");
       var oNum = document.getElementById("num");
       var oNumLi = oNum.getElementsByTagName("li");
-      var oNextBack = document.getElementById("next-back");
-      var oNBLi = document.getElementsByTagName("li");
+      var oPrev = document.getElementById("prev");
+      var oNextv = document.getElementById("nextv");
+      var iIndex = 0;
       for (var i = 0; i < oNumLi.length; i++) {
         oNumLi[i].getInum = i;
         oNumLi[i].onmouseover = function() {
+          iIndex = this.getInum;
           for (var j = 0; j < oNumLi.length; j++) {
             // console.log(j);
             aImges[j].className = " ";
+            oNumLi[j].className = " ";
           }
           aImges[this.getInum].className = "imges-sel";
+          oNumLi[this.getInum].className = "num-sel";
         };
       }
-      for (var z = 0; z < oNBLi.length; z++) {
-          oNBLi[z].onclick = function(){
 
-          }
-      }
+      oPrev.onclick = function() {
+        iIndex--;
+        if (iIndex == -1) {
+          iIndex = oNumLi.length - 1;
+        }
+        for (i = 0; i < oNumLi.length; i++) {
+          aImges[i].className = " ";
+          oNumLi[i].className = " ";
+        }
+        //console.log(iIndex);
+        aImges[iIndex].className = "imges-sel";
+        oNumLi[iIndex].className = "num-sel";
+      };
+
+      oNextv.onclick = function() {
+        iIndex++;
+        if (iIndex == 4) {
+          iIndex = oNumLi.length - 4;
+        }
+        for (i = 0; i < oNumLi.length; i++) {
+          aImges[i].className = " ";
+          oNumLi[i].className = " ";
+        }
+        console.log(iIndex);
+        aImges[iIndex].className = "imges-sel";
+        oNumLi[iIndex].className = "num-sel";
+      };
     </script>
   </body>
 </html>
