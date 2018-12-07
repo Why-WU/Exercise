@@ -96,39 +96,37 @@
       var oPrev = document.getElementById("prev");
       var oNextv = document.getElementById("nextv");
       var iIndex = 0;
+
+      setInterval(cut(),1000);
+
+      //数字切换，放上去就是对应的图片
       for (var i = 0; i < oNumLi.length; i++) {
         oNumLi[i].getInum = i;
         oNumLi[i].onmouseover = function() {
           iIndex = this.getInum;
-          for (var j = 0; j < oNumLi.length; j++) {
-            // console.log(j);
-            aImges[j].className = " ";
-            oNumLi[j].className = " ";
-          }
-          aImges[this.getInum].className = "imges-sel";
-          oNumLi[this.getInum].className = "num-sel";
+          cut();
         };
       }
 
-      oPrev.onclick = function() {
-        iIndex--;
-        if (iIndex == -1) {
-          iIndex = oNumLi.length - 1;
+      //箭头切换上一张或下一张
+      oPrev.onclick = oNextv.onclick = function() {
+        if (this === oPrev) {
+          iIndex--;
+          if (iIndex == -1) {
+            iIndex = oNumLi.length - 1;
+          }
+        } else {
+          iIndex++;
+          if (iIndex == 4) {
+            iIndex = oNumLi.length - 4;
+          }
         }
-        for (i = 0; i < oNumLi.length; i++) {
-          aImges[i].className = " ";
-          oNumLi[i].className = " ";
-        }
-        //console.log(iIndex);
-        aImges[iIndex].className = "imges-sel";
-        oNumLi[iIndex].className = "num-sel";
+
+        cut();
       };
 
-      oNextv.onclick = function() {
-        iIndex++;
-        if (iIndex == 4) {
-          iIndex = oNumLi.length - 4;
-        }
+      //切换图片
+      function cut() {
         for (i = 0; i < oNumLi.length; i++) {
           aImges[i].className = " ";
           oNumLi[i].className = " ";
@@ -136,7 +134,7 @@
         console.log(iIndex);
         aImges[iIndex].className = "imges-sel";
         oNumLi[iIndex].className = "num-sel";
-      };
+      }
     </script>
   </body>
 </html>
