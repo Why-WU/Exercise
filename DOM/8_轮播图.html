@@ -95,9 +95,21 @@
       var oNumLi = oNum.getElementsByTagName("li");
       var oPrev = document.getElementById("prev");
       var oNextv = document.getElementById("nextv");
+      var oContainer = document.getElementById("container");
       var iIndex = 0;
 
-      setInterval(cut(),1000);
+      //自动播放
+      oContainer.onmouseover = function() {
+        clearInterval(timer);
+      };
+      oContainer.onmouseout = function() {
+        timer = setInterval(function() {
+          oNextv.onclick();
+        }, 1000);
+      };
+      var timer = setInterval(function() {
+        oNextv.onclick();
+      }, 1000);
 
       //数字切换，放上去就是对应的图片
       for (var i = 0; i < oNumLi.length; i++) {
