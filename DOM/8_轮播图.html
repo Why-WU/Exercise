@@ -97,19 +97,16 @@
       var oNextv = document.getElementById("nextv");
       var oContainer = document.getElementById("container");
       var iIndex = 0;
+      var timer;
 
       //自动播放
       oContainer.onmouseover = function() {
         clearInterval(timer);
       };
       oContainer.onmouseout = function() {
-        timer = setInterval(function() {
-          oNextv.onclick();
-        }, 1000);
+        play();
       };
-      var timer = setInterval(function() {
-        oNextv.onclick();
-      }, 1000);
+      play();
 
       //数字切换，放上去就是对应的图片
       for (var i = 0; i < oNumLi.length; i++) {
@@ -143,9 +140,15 @@
           aImges[i].className = " ";
           oNumLi[i].className = " ";
         }
-        console.log(iIndex);
         aImges[iIndex].className = "imges-sel";
         oNumLi[iIndex].className = "num-sel";
+      }
+
+      //播放
+      function play() {
+        timer = setInterval(function() {
+          oNextv.onclick();
+        }, 1000);
       }
     </script>
   </body>
