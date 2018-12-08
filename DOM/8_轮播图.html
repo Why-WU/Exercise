@@ -71,7 +71,8 @@
     <div id="container">
       <div id="imges">
         <img src="img/1.jpg" alt="" / class="imges-sel">
-        <img src="img/2.jpg" alt="" /> <img src="img/3.jpg" alt="" />
+        <img src="img/2.jpg" alt="" /> 
+        <img src="img/3.jpg" alt="" />
         <img src="img/4.jpg" alt="" />
       </div>
       <div id="bottom-button">
@@ -92,12 +93,12 @@
       var oImges = document.getElementById("imges");
       var aImges = document.getElementsByTagName("img");
       var oNum = document.getElementById("num");
-      var oNumLi = oNum.getElementsByTagName("li");
+      var aNumLi = oNum.getElementsByTagName("li");
       var oPrev = document.getElementById("prev");
       var oNextv = document.getElementById("nextv");
       var oContainer = document.getElementById("container");
-      var iIndex = 0;
-      var timer;
+      var iIndex = 0; //当前选中的索引(下标)
+      var timer = null; //定时器变量
 
       //自动播放
       oContainer.onmouseover = function() {
@@ -109,11 +110,18 @@
       play();
 
       //数字切换，放上去就是对应的图片
-      for (var i = 0; i < oNumLi.length; i++) {
-        oNumLi[i].getInum = i;
-        oNumLi[i].onmouseover = function() {
+      for (var i = 0; i < aNumLi.length; i++) {
+        aNumLi[i].getInum = i;
+        aNumLi[i].onmouseover = function() {
           iIndex = this.getInum;
           cut();
+        };
+      }
+
+      //双击不会被选中
+      for (var i = 0; i < aNumLi.length; i++) {
+        aNumLi[i].onselectstart = function() {
+          return false;
         };
       }
 
@@ -122,26 +130,31 @@
         if (this === oPrev) {
           iIndex--;
           if (iIndex == -1) {
-            iIndex = oNumLi.length - 1;
+            iIndex = aNumLi.length - 1;
           }
         } else {
           iIndex++;
-          if (iIndex == 4) {
-            iIndex = oNumLi.length - 4;
+          if (iIndex == aNumLi.length) {
+            iIndex = 0;
           }
         }
 
         cut();
       };
 
+      //双击不会被选中
+      oPrev.onselectstart = oNextv.onselectstart = function() {
+        return false;
+      };
+
       //切换图片
       function cut() {
-        for (i = 0; i < oNumLi.length; i++) {
+        for (i = 0; i < aNumLi.length; i++) {
           aImges[i].className = " ";
-          oNumLi[i].className = " ";
+          aNumLi[i].className = " ";
         }
         aImges[iIndex].className = "imges-sel";
-        oNumLi[iIndex].className = "num-sel";
+        aNumLi[iIndex].className = "num-sel";
       }
 
       //播放
