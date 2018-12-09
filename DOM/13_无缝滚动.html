@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        list-style: none;
+      }
+
+      #container {
+        margin: 100px auto;
+        width: 300px;
+        height: 200px;
+        border: #000000 1px solid;
+        overflow: hidden;
+        position: relative;
+      }
+
+      #picture {
+        width: 450px;
+        height: 200px;
+        position: absolute;
+      }
+
+      #picture div {
+        margin-right: 5px;
+        width: 100px;
+        height: 100px;
+        background: #000000;
+        color: #ffffff;
+        float: left;
+      }
+      
+      #text li{
+        float: left;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="picture">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+      </div>
+      <ul id="text">
+        <li id="left">向左</li>
+        <li id="right">向右</li>
+      </ul>
+    </div>
+
+    <script>
+      var oPicture = document.getElementById("picture");
+      var aDiv = oPicture.getElementsByTagName("div");
+      var oContainer = document.getElementById("container");
+      var oLeft = document.getElementById("left");
+      var oRight = document.getElementById("right");
+      oPicture.innerHTML += oPicture.innerHTML;
+      oPicture.style.width = oPicture.offsetWidth * 2 + "px";
+      var speed = 5;
+
+      var timer = setInterval(function() {
+        oPicture.style.left = oPicture.offsetLeft - speed + "px";
+        if (-oPicture.offsetLeft >= oPicture.offsetWidth / 2) {
+          oPicture.style.left = 0;
+        }
+        if (oPicture.offsetLeft > 0) {
+          oPicture.style.left = -oPicture.offsetWidth / 2 + "px";
+        }
+      }, 100);
+
+      /* var timer = setInterval(function() {
+        oPicture.style.left = oPicture.offsetLeft + 10 + "px";
+        if (oPicture.offsetLeft > 0) {
+          oPicture.style.left = -oPicture.offsetWidth / 2 +'px';
+        }
+      }, 100); */
+
+      oLeft.onmouseover = function() {
+        speed = 5;
+      };
+      oRight.onmouseover = function() {
+        speed = -5;
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      #div1 {
+        width: 500px;
+        height: 30px;
+        background: #cccccc;
+        border-radius: 5px;
+      }
+
+      #div2 {
+        height: 30px;
+        border-radius: 5px;
+        background: #ff0000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1"><div id="div2"></div></div>
+
+    <script>
+      var oDiv2 = document.getElementById("div2");
+      var oDiv1 = document.getElementById("div1");
+      var step = 0;
+      /* var timer = setInterval(function(){
+        run++;
+        oDiv2.style.width =  step +'%';
+        if(oDiv2.offsetWidth>=oDiv1.offsetWidth){
+            clearInterval(timer);
+        }      
+    },50) */
+
+      function run() {
+        step++;
+        oDiv2.style.width = step + "%";
+        oDiv2.innerHTML = step + "%";
+        if (oDiv2.offsetWidth < oDiv1.offsetWidth) {
+          requestAnimationFrame(run);   //raf 刚好和浏览器刷新频率相同
+        }
+      }
+      run();
+    </script>
+  </body>
+</html>

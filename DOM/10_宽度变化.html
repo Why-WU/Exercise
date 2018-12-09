@@ -1,25 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <style></style>
-</head>
-<body>
-
-
-
+    <style>
+      #div1,
+      #div2,
+      #div3 {
+        background: #ff0000;
+        width: 50px;
+        height: 30px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
 
     <script>
-    /*
+      /*
     offsetWidth和offsetHeight 获取宽度和高度的值，包含padding和board
     对象.style.属性 一般用于赋值
     
     
     */
-    
     </script>
-</body>
+
+    <script>
+      var aDiv = document.getElementsByTagName("div");
+      for (i = 0; i < aDiv.length; i++) {
+        aDiv[i].onmouseover = function() {
+          clearInterval(this.timer);
+          this.timer = setInterval(
+            function() {
+              if (this.offsetWidth > 500) {
+                clearInterval(this.timer);
+              } else {
+                this.style.width = this.offsetWidth + 10 + "px";
+              }
+            }.bind(this),
+            50
+          );
+        };
+        aDiv[i].onmouseout = function() {
+          clearInterval(this.timer);
+          this.timer = setInterval(
+            function() {
+              if (this.offsetWidth < 50) {
+                clearInterval(this.timer);
+              } else {
+                this.style.width = this.offsetWidth - 10 + "px";
+              }
+            }.bind(this),
+            50
+          );
+        };
+      }
+    </script>
+  </body>
 </html>
