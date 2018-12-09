@@ -115,6 +115,7 @@
       var aImgs = oImgs.getElementsByClassName("banner");
       var oNav = document.getElementById("nav");
       var aLi = oNav.getElementsByTagName("li");
+      var nowIndex = 0;
 
       for (var i = 0; i < aLi.length; i++) {
         aLi[i].getINum = i;
@@ -124,10 +125,24 @@
             aImgs[j].className = "banner banner" + (j + 1); //要把(j+1)用括号括上，不然就会变成字符串拼接，这样才能运算
             // console.log(aImgs);
           }
+          nowIndex = this.getINum;
           this.className = "nav-sel";
           aImgs[this.getINum].className += " imgs-sel"; //+= 如果只是+的话aImgs里的元素数量会改变，引用数据类型是指向地址的
                                                         //在imgs-sel前面要加一个空格，不然会和上面的class连上
         };
+      }
+
+      setInterval(function(){
+          
+      },1000)
+
+      function cut() {
+        for (i = 0; i < aLi.length; i++) {
+          aLi[i].className = "";
+          aImgs[i].classList = "banner banner" + (i + 1);
+        }
+        aLi[nowIndex].className = "nav-sel";
+        aImgs[nowIndex].className += " imgs-sel";
       }
     </script>
   </body>

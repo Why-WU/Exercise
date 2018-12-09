@@ -101,14 +101,14 @@
       var timer = null; //定时器变量
 
       //自动播放
+      play();
       oContainer.onmouseover = function() {
         clearInterval(timer);
       };
       oContainer.onmouseout = function() {
         play();
       };
-      play();
-
+     
       //数字切换，放上去就是对应的图片
       for (var i = 0; i < aNumLi.length; i++) {
         aNumLi[i].getInum = i;
