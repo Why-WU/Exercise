@@ -308,14 +308,24 @@ h3 {
   height: 500px;
 }
 
+#banner-imgs {
+  position: relative;
+}
+
+#banner-imgs div {
+  width: 100%;
+  position: absolute;
+}
+
 #banner-imgs img {
   width: 100%;
-  height: 100%;
-  display: none;
+  text-align: center;
+  opacity: 0;
+  transition: all 1s ease;
 }
 
 #banner-imgs .banner-sel {
-  display: block;
+  opacity: 1;
 }
 
 #banner .category-tab {

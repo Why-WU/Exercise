@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+      }
+
+      #imgs {
+        position: relative;
+      }
+
+      #imgs .banner {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        opacity: 0;
+        transition: all 1s ease;
+      }
+
+      #imgs .imgs-sel {
+        opacity: 1;
+      }
+
+      #imgs .banner1 {
+        background-color: #e8e8e8;
+      }
+
+      #imgs .banner2 {
+        background-color: #1d3cbc;
+      }
+
+      #imgs .banner3 {
+        background-color: #dc2d32;
+      }
+
+      #nav li {
+        width: 20px;
+        height: 5px;
+        background: #000000;
+        opacity: 0.6;
+        margin-right: 20px;
+        float: left;
+        cursor: pointer;
+      }
+
+      #nav li:last-child {
+        margin-right: 0;
+      }
+
+      #nav .nav-sel {
+        background-color: #ffffff;
+      }
+
+      #container {
+        position: relative;
+        height: 500px;
+      }
+
+      #nav {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="imgs">
+        <div class="banner banner1 imgs-sel">
+          <img
+            src="https://img.alicdn.com/simba/img/TB1xIQMvH5YBuNjSspoSuveNFXa.jpg"
+            alt=""
+          />
+        </div>
+        <div class="banner banner2">
+          <img
+            src="http://img.alicdn.com/imgextra/i1/114/TB2wYu7c8cXBuNjt_XoXXXIwFXa_!!114-0-luban.jpg_q100.jpg_.webp"
+            alt=""
+          />
+        </div>
+        <div class="banner banner2">
+          <img
+            src="http://img.alicdn.com/tps/i4/TB17ITUFuuSBuNjSsplSuve8pXa.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <ul id="nav">
+        <li class="nav-sel"></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+
+    <script>
+      /*
+    引用数据类型是指向地址的
+
+
+    */
+    </script>
+
+    <script>
+      var oImgs = document.getElementById("imgs");
+      var aImgs = oImgs.getElementsByClassName("banner");
+      var oNav = document.getElementById("nav");
+      var aLi = oNav.getElementsByTagName("li");
+
+      for (var i = 0; i < aLi.length; i++) {
+        aLi[i].getINum = i;
+        aLi[i].onmouseover = function() {
+          for (j = 0; j < aLi.length; j++) {
+            aLi[j].className = "";
+            aImgs[j].className = "banner banner" + (j + 1); //要把(j+1)用括号括上，不然就会变成字符串拼接，这样才能运算
+            // console.log(aImgs);
+          }
+          this.className = "nav-sel";
+          aImgs[this.getINum].className += " imgs-sel"; //+= 如果只是+的话aImgs里的元素数量会改变，引用数据类型是指向地址的
+                                                        //在imgs-sel前面要加一个空格，不然会和上面的class连上
+        };
+      }
+    </script>
+  </body>
+</html>
