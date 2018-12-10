@@ -39,10 +39,19 @@
         color: #ffffff;
         float: left;
       }
-      
-      #text li{
+
+      #text li {
         float: left;
-        
+        margin-right: 20px;
+        border: 1px solid;
+        cursor: pointer;
+      }
+
+      #text {
+        position:absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
       }
     </style>
   </head>
@@ -79,13 +88,6 @@
           oPicture.style.left = -oPicture.offsetWidth / 2 + "px";
         }
       }, 100);
-
-      /* var timer = setInterval(function() {
-        oPicture.style.left = oPicture.offsetLeft + 10 + "px";
-        if (oPicture.offsetLeft > 0) {
-          oPicture.style.left = -oPicture.offsetWidth / 2 +'px';
-        }
-      }, 100); */
 
       oLeft.onmouseover = function() {
         speed = 5;
