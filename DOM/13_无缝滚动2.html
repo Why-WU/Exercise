@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+      }
+
+      #container {
+        width: 520px;
+        height: 280px;
+        margin: 100px auto;
+        position: relative;
+      }
+
+      #imges img {
+        display: none;
+      }
+
+      #imges .imges-sel {
+        display: block;
+      }
+
+      #bottom-button li {
+        cursor: pointer;
+        background: #000;
+        color: #fff;
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
+      }
+
+      #num {
+        float: right;
+      }
+
+      #num li {
+        float: left;
+      }
+
+      #num .num-sel {
+        background: orange;
+      }
+
+      #next-back {
+        float: left;
+      }
+
+      #next-back li {
+        float: left;
+      }
+
+      #bottom-button {
+        width: 520px;
+        position: absolute;
+        top: 250px;
+        left: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="imges">
+        <img src="img/1.jpg" alt="" / class="imges-sel">
+        <img src="img/2.jpg" alt="" /> 
+        <img src="img/3.jpg" alt="" />
+        <img src="img/4.jpg" alt="" />
+        <img src="img/1.jpg" alt="" />
+      </div>
+      <div id="bottom-button">
+        <ul id="num">
+          <li class="num-sel">1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+        </ul>
+        <ul id="next-back">
+          <li id="prev">&lt;</li>
+          <li id="nextv">&gt;</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <script>
+    
+    
+    
+    </script>
+  </body>
+</html>
