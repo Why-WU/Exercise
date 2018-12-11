@@ -19,13 +19,23 @@
         height: 280px;
         margin: 100px auto;
         position: relative;
+        overflow: hidden;
       }
 
-      #imges img {
+      #imges {
+        width: 2100px;
+        height: 100%;
+        position: absolute;
+      }
+
+      #imges li {
+        float: left;
+        width: 520px;
+        height: 280px;
         display: none;
       }
 
-      #imges .imges-sel {
+      #imges .img-sel {
         display: block;
       }
 
@@ -68,13 +78,12 @@
   </head>
   <body>
     <div id="container">
-      <div id="imges">
-        <img src="img/1.jpg" alt="" / class="imges-sel">
-        <img src="img/2.jpg" alt="" /> 
-        <img src="img/3.jpg" alt="" />
-        <img src="img/4.jpg" alt="" />
-        <img src="img/1.jpg" alt="" />
-      </div>
+      <ul id="imges">
+        <li class="img-sel"><img src="img/1.jpg" alt="" /></li>
+        <li><img src="img/2.jpg" alt="" /></li>
+        <li><img src="img/3.jpg" alt="" /></li>
+        <li><img src="img/4.jpg" alt="" /></li>
+      </ul>
       <div id="bottom-button">
         <ul id="num">
           <li class="num-sel">1</li>
@@ -89,11 +98,53 @@
       </div>
     </div>
 
-
     <script>
-    
-    
-    
+      var oContainer = document.getElementById("container");
+      var oImges = document.getElementById("imges");
+      var aImgeLi = oImges.getElementsByTagName("li");
+      var oNum = document.getElementById("num");
+      var aNumLi = oNum.getElementsByTagName("li");
+      oImges.innerHTML = oImges.innerHTML + aImgeLi[0].innerHTML;
+      oImges.style.width = oImges.offsetWidth + aImgeLi[0].offsetWidth + "px";
+      var speed = 50; //设置速度
+      var timer = null;
+      
+      play();
+      oContainer.onmouseover = function() {
+        clearInterval(timer);
+      };
+
+      oContainer.onmouseout = function() {
+        play();
+      };
+
+      for (i = 0; i < aImgeLi.length; i++) {
+        aNumLi[i].getINum = [i];
+        aNumLi[i].onmouseover = function() {
+          for (j = 0; j < aImgeLi.length; j++) {
+            aNumLi[j].className = " ";
+            aImgeLi[j].className = "";
+          }
+          this.className = "num-sel";
+          aImgeLi[this.getINum].className = "img-sel";
+          console.log(this);
+        };
+      }
+
+      function play() {
+        timer = setInterval(function() {
+          for (i = 0; i < aImgeLi.length; i++) {
+            aImgeLi[i].className = "img-sel";
+          }
+          oImges.style.left = oImges.offsetLeft + speed + "px";
+          if (-oImges.offsetLeft >= aImgeLi.length * aImgeLi[0].offsetWidth) {
+            oImges.style.left = 0;
+          }
+          if (oImges.offsetLeft > 0) {
+            oImges.style.left = -aImgeLi.length * aImgeLi[0].offsetWidth + "px";
+          }
+        }, 100);
+      }
     </script>
   </body>
 </html>
