@@ -92,8 +92,8 @@
           <li>4</li>
         </ul>
         <ul id="next-back">
-          <li id="prev">&lt;</li>
-          <li id="nextv">&gt;</li>
+          <li id="back">&lt;</li>
+          <li id="next">&gt;</li>
         </ul>
       </div>
     </div>
@@ -104,11 +104,14 @@
       var aImgeLi = oImges.getElementsByTagName("li");
       var oNum = document.getElementById("num");
       var aNumLi = oNum.getElementsByTagName("li");
+      var oBack = document.getElementById("back");
+      var oNext = document.getElementById("next");
       oImges.innerHTML = oImges.innerHTML + aImgeLi[0].innerHTML;
       oImges.style.width = oImges.offsetWidth + aImgeLi[0].offsetWidth + "px";
       var speed = 50; //设置速度
       var timer = null;
-      
+      var iIndex = 0;
+
       play();
       oContainer.onmouseover = function() {
         clearInterval(timer);
@@ -124,25 +127,45 @@
           for (j = 0; j < aImgeLi.length; j++) {
             aNumLi[j].className = " ";
           }
+          iIndex = this.getINum;
           this.className = "num-sel";
-          oImges.style.left = -(this.innerHTML-1) * aImgeLi[0].offsetWidth + "px";
+          oImges.style.left = -(this.innerHTML - 1) * aImgeLi[0].offsetWidth + "px";
           console.log(typeof (this.innerHTML * aImgeLi[0].offsetWidth));
         };
       }
 
+     /*  function BackNext(_number) {
+        oImges.style.left = oImges.offsetLeft + _number + "px";
+      } */
+
+      oBack.onclick = oNext.onclick = function() {
+        if (this === oBack) {
+          iIndex
+          if (-oImges.offsetLeft >= aImgeLi[0].offsetWidth * 4) {
+            oImges.style.left = 0;
+          }
+          BackNext(aImgeLi[0].offsetWidth);
+        } else {
+          iIndex++;
+          if (oImges.offsetLeft >= 0) {
+            oImges.style.left = -aImgeLi[0].offsetWidth * 4 + "px";
+          }
+          BackNext(-aImgeLi[0].offsetWidth);
+        }
+      };
+
       function play() {
-        timer = setTimeout(function() {
+        timer = setInterval(function() {
           /* for (i = 0; i < aImgeLi.length; i++) {
             aImgeLi[i].className = "img-sel";
           } */
           oImges.style.left = oImges.offsetLeft + speed + "px";
-          if (-oImges.offsetLeft >= (aImgeLi.length) * aImgeLi[0].offsetWidth) {
+          /* if (-oImges.offsetLeft >= aImgeLi.length * aImgeLi[0].offsetWidth) {
             oImges.style.left = 0;
-          }
+          } */
           if (oImges.offsetLeft > 0) {
             oImges.style.left = -aImgeLi.length * aImgeLi[0].offsetWidth + "px";
           }
-          timer();
         }, 200);
       }
     </script>
