@@ -32,12 +32,12 @@
         float: left;
         width: 520px;
         height: 280px;
-        display: none;
+        /* display: none; */
       }
 
-      #imges .img-sel {
+      /* #imges .img-sel {
         display: block;
-      }
+      } */
 
       #bottom-button li {
         cursor: pointer;
@@ -133,9 +133,9 @@
 
       function play() {
         timer = setInterval(function() {
-          for (i = 0; i < aImgeLi.length; i++) {
+          /* for (i = 0; i < aImgeLi.length; i++) {
             aImgeLi[i].className = "img-sel";
-          }
+          } */
           oImges.style.left = oImges.offsetLeft + speed + "px";
           if (-oImges.offsetLeft >= aImgeLi.length * aImgeLi[0].offsetWidth) {
             oImges.style.left = 0;
