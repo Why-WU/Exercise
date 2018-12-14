@@ -123,27 +123,27 @@
         aNumLi[i].onmouseover = function() {
           for (j = 0; j < aImgeLi.length; j++) {
             aNumLi[j].className = " ";
-            aImgeLi[j].className = "";
           }
           this.className = "num-sel";
-          aImgeLi[this.getINum].className = "img-sel";
-          console.log(this);
+          oImges.style.left = -(this.innerHTML-1) * aImgeLi[0].offsetWidth + "px";
+          console.log(typeof (this.innerHTML * aImgeLi[0].offsetWidth));
         };
       }
 
       function play() {
-        timer = setInterval(function() {
+        timer = setTimeout(function() {
           /* for (i = 0; i < aImgeLi.length; i++) {
             aImgeLi[i].className = "img-sel";
           } */
           oImges.style.left = oImges.offsetLeft + speed + "px";
-          if (-oImges.offsetLeft >= aImgeLi.length * aImgeLi[0].offsetWidth) {
+          if (-oImges.offsetLeft >= (aImgeLi.length) * aImgeLi[0].offsetWidth) {
             oImges.style.left = 0;
           }
           if (oImges.offsetLeft > 0) {
             oImges.style.left = -aImgeLi.length * aImgeLi[0].offsetWidth + "px";
           }
-        }, 100);
+          timer();
+        }, 200);
       }
     </script>
   </body>
