@@ -15,6 +15,7 @@
       }
       #continer li {
         float: left;
+        margin-left: 20px;
       }
       #continer {
         width: 1200px;
@@ -98,13 +99,22 @@
           oSmallMark.style.top =
             oSmall.offsetHeight - oSmallMark.offsetHeight + "px";
         }
-          
+
         var h = oSmallMark.offsetTop / oSmall.offsetHeight;
         var w = oSmallMark.offsetLeft / oSmall.offsetWidth;
 
         oBig.style.top = -oBig.offsetHeight * h + "px";
         oBig.style.left = -oBig.offsetWidth * w + "px";
-        })
+      });
     </script>
   </body>
 </html>
+
+
+<!-- 
+    IE6下，一个元素如果完全透明并且没有颜色，那它就不存在！
+
+
+
+
+ -->
