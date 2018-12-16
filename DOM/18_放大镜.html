@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+      }
+      #continer li {
+        float: left;
+      }
+      #continer {
+        width: 1200px;
+        height: 1200px;
+      }
+      #small {
+        position: relative;
+        overflow: hidden;
+      }
+      #small-mark {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: rgba(0, 0, 100, 0.5);
+        top: 0;
+        left: 0;
+        display: none;
+      }
+      #big {
+        position: absolute;
+        display: none;
+      }
+      #big-mark {
+        width: 400px;
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="continer">
+      <li id="small">
+        <img src="18_放大镜/1.jpg" alt="" />
+        <div id="small-mark"></div>
+      </li>
+
+      <li>
+        <div id="big-mark"><img src="18_放大镜/2.jpg" alt="" / id="big"></div>
+      </li>
+    </ul>
+
+    <script>
+      var oContiner = document.getElementById("continer");
+      var oSmall = document.getElementById("small");
+      var oSmallMark = document.getElementById("small-mark");
+      var oBig = document.getElementById("big");
+
+      oSmall.addEventListener("mouseover", function() {
+        oSmallMark.style.display = "block";
+        oBig.style.display = "block";
+      });
+
+      oSmall.addEventListener("mouseout", function() {
+        oSmallMark.style.display = "none";
+        oBig.style.display = "none";
+      });
+
+      oSmall.addEventListener("mousemove", function(e) {
+        var iDisX = e.clientX - oSmall.offsetLeft;
+        var iDisY = e.clientY - oSmall.offsetTop;
+        oSmallMark.style.left = iDisX - oSmallMark.offsetWidth / 2 + "px";
+        oSmallMark.style.top = iDisY - oSmallMark.offsetHeight / 2 + "px";
+        if (oSmallMark.offsetLeft <= 0) {
+          oSmallMark.style.left = 0;
+        }
+        if (oSmallMark.offsetTop <= 0) {
+          oSmallMark.style.top = 0;
+        }
+        if (
+          oSmallMark.offsetLeft >=
+          oSmall.offsetWidth - oSmallMark.offsetWidth
+        ) {
+          oSmallMark.style.left =
+            oSmall.offsetWidth - oSmallMark.offsetWidth + "px";
+        }
+        if (
+          oSmallMark.offsetTop >=
+          oSmall.offsetHeight - oSmallMark.offsetHeight
+        ) {
+          oSmallMark.style.top =
+            oSmall.offsetHeight - oSmallMark.offsetHeight + "px";
+        }
+          
+        var h = oSmallMark.offsetTop / oSmall.offsetHeight;
+        var w = oSmallMark.offsetLeft / oSmall.offsetWidth;
+
+        oBig.style.top = -oBig.offsetHeight * h + "px";
+        oBig.style.left = -oBig.offsetWidth * w + "px";
+        })
+    </script>
+  </body>
+</html>
