@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+
+  </body>
+</html>
+
+<!--
+  事件：事件源  事件处理函数  事件对象e
+
+  事件是可以传播的。
+  事件冒泡：由里而外的传播。   里->外
+  事件捕获：从外往里传播。    外->里
+  捕获和冒泡同时存在，先捕获后冒泡。
+
+  addEventListener('事件(不要on)',function(){},false(默认值，冒泡)/true(捕获))方法
+
+  阻止事件传播：stopPropagation()   标准浏览器
+
+  attachEvent('onclick',function(){}) 给同一个事件绑定同一个事件的时候执行顺序是相反的 这个方法的this是指向window的   早期IE的方法
+                                      阻止事件冒泡：window.event.cancelBubble = true;
+
+  事件源：e.target
+
+  事件委托/事件代理    利用事件冒泡，把子元素事件委托给父元素/让父元素代理绑定
+
+  this===e.currentTarget
+-->
