@@ -5,73 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #menu {
+        width: 400px;
+        height: 30px;
+        border: #000 1px solid;
+      }
+
+      #menu li {
+        float: left;
+        list-style: none;
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        background: #cccccc;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+
+      #menu .menu-sel {
+        background: #000000;
+        color: #ffffff;
+      }
+
+      #continer div {
+        width: 400px;
+        height: 300px;
+        border: #000 1px solid;
+        display: none;
+      }
+
+      #continer .continer-sel {
+        display: block;
+      }
+    </style>
   </head>
   <body>
-    筛选：<input type="text" id="checkBox" />
-    <table>
-      <thead>
-        <tr>
-          <th>姓名</th>
-          <th>性别</th>
-          <th>住址</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>张三</td>
-          <td>男</td>
-          <td>浙江宁波</td>
-        </tr>
-        <tr>
-          <td>李四</td>
-          <td>女</td>
-          <td>浙江杭州</td>
-        </tr>
-        <tr>
-          <td>王五</td>
-          <td>男</td>
-          <td>湖南长沙</td>
-        </tr>
-        <tr>
-          <td>赵柳</td>
-          <td>男</td>
-          <td>浙江温州</td>
-        </tr>
-        <tr>
-          <td>Rain</td>
-          <td>女</td>
-          <td>浙江杭州</td>
-        </tr>
-        <tr>
-          <td>MAXMAN</td>
-          <td>男</td>
-          <td>河北石家庄</td>
-        </tr>
-        <tr>
-          <td>王六</td>
-          <td>女</td>
-          <td>浙江杭州</td>
-        </tr>
-        <tr>
-          <td>李子</td>
-          <td>女</td>
-          <td>河北保定</td>
-        </tr>
-        <tr>
-          <td>赵八</td>
-          <td>男</td>
-          <td>浙江温州</td>
-        </tr>
-      </tbody>
-    </table>
+    <ul id="menu">
+      <li class="menu-sel">html</li>
+      <li>css</li>
+      <li>js</li>
+    </ul>
+
+    <div id="continer">
+      <div class="continer-sel">001</div>
+      <div>002</div>
+      <div>003</div>
+    </div>
+
 
     <script src="./js/jquery-3.3.1.min.js"></script>
     <script>
-      $("#checkBox").keyup(function() {
-        $("table tbody tr")
-          .hide()
-          .filter(":contains('"+($(this).val())+"')").show();
-      }).keyup();
+    $('#menu li').click(function(){
+      $('#continer div:eq("+$(this).index()+")').addClass('continer-sel').siblings().removeClass('continer-sel');
+      
+      $(this).addClass('menu-sel').siblings().removeClass('menu-sel');
+    })
+    
     </script>
   </body>
 </html>
