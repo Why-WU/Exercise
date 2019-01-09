@@ -58,15 +58,19 @@
       <div>003</div>
     </div>
 
-
     <script src="./js/jquery-3.3.1.min.js"></script>
     <script>
-    $('#menu li').click(function(){
-      $('#continer div:eq("+$(this).index()+")').addClass('continer-sel').siblings().removeClass('continer-sel');
-      
-      $(this).addClass('menu-sel').siblings().removeClass('menu-sel');
-    })
-    
+      $("#menu li").click(function() {
+        $('#continer div:eq("+$(this).index()+")')
+          .addClass("continer-sel")
+          .siblings()
+          .removeClass("continer-sel");
+
+        $(this)
+          .addClass("menu-sel")
+          .siblings()
+          .removeClass("menu-sel");
+      });
     </script>
   </body>
 </html>
