@@ -61,7 +61,7 @@
     <script src="./js/jquery-3.3.1.min.js"></script>
     <script>
       $("#menu li").click(function() {
-        $('#continer div:eq("+$(this).index()+")')
+        $('#continer div:eq('+$(this).index()+')')
           .addClass("continer-sel")
           .siblings()
           .removeClass("continer-sel");
