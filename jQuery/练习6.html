@@ -58,23 +58,23 @@
     <script src="./js/jquery-3.3.1.min.js"></script>
     <script>
       $("table td").click(function() {
-        var $changeInput = $("<input></input>");
+        var $changeInput = $("<input></input>");   //创建一个input并调整css样式
         $changeInput
           .css("height", $(this).height())
           .css("width", $(this).width())
           .css("border-width", "0");
-        $changeInput.val($(this).html());
+        $changeInput.val($(this).html());       //保存原来的值到input里
 
         if ($(this).children().length > 0) {
           return false;
         } else {
-          $(this).empty();
-          $changeInput.appendTo($(this));
-          $changeInput.focus();
+          $(this).empty();                      //清空原来的值
+          $changeInput.appendTo($(this));       //将新建的input放进父元素中
+          $changeInput.focus();                //获取焦点
         }
       });
 
-      $("table td").focusout(function() {
+      $("table td").focusout(function() {       //失去焦点
         $(this).text(
           $(this)
             .children("input")
@@ -82,9 +82,9 @@
         );
       });
 
-      $("table td").keydown(function(e) {
-        if (e.which == 13) {
-          $(this).trigger("focusout");
+      $("table td").keydown(function(e) {        //按下回车保存
+        if (e.which == 13) {                     //e.which 获取按键值
+          $(this).trigger("focusout");           //调用自身绑定的另一个事件函数
         }
       });
     </script>
