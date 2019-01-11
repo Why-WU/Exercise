@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+        html{
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+        }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #contains {
+        max-width: 960px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .header,
+      .option,
+      .footer {
+        text-align: center;
+        background-color: #ccc;
+        font-size: 28px;
+        color: #000;
+        flex: 1;
+      }
+
+      .pic {
+        height: 500px;
+        position: relative;
+        flex: 4;
+      }
+
+      .pic img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        width: 100%;
+      }
+
+      .pcont{
+          display: flex;
+          flex: 3;
+          height: 500px;
+      }
+      .ptext{
+          /* flex: 1; */
+          text-align: center;
+          position: relative;
+          height: 100%;
+      }
+      .ptext p{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contains">
+      <div class="header">页眉</div>
+      <div class="option">选项</div>
+      <div class="pic"><img src="./haibao.jpg" /></div>
+      <div class="pcont">
+          <div class="ptext">
+            <p>
+              皮埃尔·索纳拉特（1748-1814 年）是一位法国博物学家兼探险家，1769 年至
+              1781 年间他曾多次远航至东南亚地区。 1782 年他出版这部包含有描述他
+              1774-81 年航行两卷内容的著作。
+              第一卷内容专门记述印度，索纳拉特对印度的文化非常景仰，值得一提的是他在该卷中对印度的宗教特别是印度教进行了很多讨论。
+              第二卷内容涵盖了索纳拉特游历中国、缅甸、马达加斯加、马尔代夫、毛里求斯、锡兰（今斯里兰卡）、印度尼西亚和菲律宾的过程。
+              这部书还配有根据索纳拉特所绘草图而制作的版画插图。
+              其中最有趣的插图是索纳拉特有关印度教各种不同神灵的图画。
+              索纳拉特同时还是一名专注的鸟类学家和鸟类收藏家，这本书中还介绍并描绘了很多由他首次发现的物种。
+            </p>
+          </div>
+          <div class="ptext">
+            <p>
+              这幅水彩画出自威廉·泰勒（William Tayler，1808-1892
+              年）创作的以印度为主题的绘画作品集，作品集共收录了 18
+              幅作品，创作时间约为 1842-1845
+              年。泰勒是东印度公司的一名公职人员，1829-1867
+              年期间一直居住在印度。1855 年，他担任巴特那专员，1857
+              年参与镇压印度兵叛乱。他的上级认为他对当地人民过于严苛，因此将其停职并调到一个较低的职位。作为一位热爱绘画的业余画家，泰勒擅长勾勒和描绘风景、日常生活场景，以及法院、军事和印度各阶层人士的日常着装。《图解印度人和英裔印度人的礼仪和习俗：绘于石上，源自生活》于
+              1842 年在伦敦出版，其中收录了泰勒的 6 幅作品。1881 年和 1882
+              年，泰勒出版了一部两卷本自传，书名为《在印度的三十八年》，书中的 100
+              幅插图均为泰勒本人所绘。他在这幅水彩画中描绘了孟加拉柏德旺的王公。这位王公可能是马赫塔卜•钱德
+              (Mahtab Chand)，生于 1820 年，自 1832 年至 1879
+              年去世期间一直担任王公，英国人赞誉他是一位开明忠诚的统治者。这幅画选自布朗大学图书馆的《安妮·S·K·布朗军事题材作品集》。
+            </p>
+          </div>
+      </div>
+      <div class="footer">页脚</div>
+    </div>
+  </body>
+</html>
