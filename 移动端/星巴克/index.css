@@ -41,11 +41,21 @@ a {
     left: 0;
     bottom: 0;
     display: none;
+    overflow: auto;
   }
-  .no-content{
-    font-size: 80px;
+
+  .no-content li{
+    font-size: 1.8rem;
     font-weight: 700;
+    padding: 8px 0;
+    margin-left: 60px;
   }
+
+  .foot-bar{
+    margin-left: 60px;
+    padding: 15px 0;
+  }
+
 }
 .nav .content {
   height: 100%;

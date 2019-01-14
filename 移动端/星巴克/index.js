@@ -3,9 +3,9 @@ $(".container .nav .icon").on("click", function() {
   $(".overlay").fadeIn("fast", function() {
     $(".overlay").show();
   });
-  $(".no-content").animate(
+  $(".no-content li").animate(
     {
-      fontSize: "40px"
+      fontSize: "1.8rem"
     },
     100
   );
@@ -16,7 +16,7 @@ $(".close").on("click", function() {
   $(".overlay").fadeOut("fast", function() {
     $(".overlay").hide();
   });
-  $(".no-content").animate({
+  $(".no-content li").animate({
     fontSize: "80px"
   });
 });
