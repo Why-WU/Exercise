@@ -171,5 +171,41 @@ a {
     height: 500px;
     margin-left: 30%;
   }
+
+  .show-mobile {
+    display: none;
+  }
 }
+
+.hero {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  /* width: 500%; */
+}
+
+.hero-content li {
+  width: 20%;
+  float: left;
+}
+
+.hero-content li img{
+  width: 100%;
+}
+
+.hero-btn {
+  background: url("https://www.starbucks.com.cn/assets/icons/icon-arrow-white.svg")
+    no-repeat;
+  width: 48px;
+  height: 48px;
+  position:absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+
 /* contetn end */

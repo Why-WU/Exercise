@@ -21,13 +21,38 @@ $(".close").on("click", function() {
   });
 });
  */
+var nowWinSize = 0;
+var nowIndex = 0;
 
 $(".icon").click(function() {
   $(".overlay").addClass("active");
-  console.log('a');
-  
+  console.log("a");
 });
 
 $(".close").click(function() {
   $(".overlay").removeClass("active");
+});
+
+nagetWinSizeme();
+function nagetWinSizeme() {
+  nowWinSize = $(document).width() * 0.7;
+}
+$(".hero-content").width(nowWinSize * 5);
+
+$(".hero-btn").click(function() {
+  console.log($(".hero-content").length);
+  nowIndex++;
+
+  if (nowIndex >= $(".hero ul li").length) {
+    nowIndex = 0;
+    $(".hero-content").css({
+      transform: "translateX(" + -nowWinSize * nowIndex + "px)",
+      transition:'no'
+    });
+  } else {
+    $(".hero-content").css({
+      transform: "translateX(" + -nowWinSize * nowIndex + "px)",
+      transition: "all 0.3s ease"
+    });
+  }
 });
