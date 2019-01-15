@@ -33,30 +33,61 @@ a {
     background-color: #fff;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
   }
-  .overlay {
-    background-color: #fff;
-    position: fixed;
-    width: 30%;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    display: none;
-    overflow: auto;
-  }
 
-  .no-content li{
-    font-size: 1.8rem;
-    font-weight: 700;
-    padding: 8px 0;
-    margin-left: 60px;
-  }
-
-  .foot-bar{
+  .foot-bar {
     margin-left: 60px;
     padding: 15px 0;
   }
-
 }
+
+.overlay {
+  background-color: #fff;
+  position: fixed;
+  width: 30%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  /* display: none; */
+  overflow: auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.1s ease;
+}
+
+.overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.no-content {
+  transform: scale(1.2);
+  width: 100%;
+}
+
+.overlay.active .no-content {
+  transform: scale(1);
+}
+
+.noc-body {
+  height: 100%;
+  width: 100%;
+  padding: 0 24px 0 84px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.noc-body li {
+  padding: 8px 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.noc-body hr {
+  background: rgba(0, 0, 0, 0.12);
+  border: 0;
+  height: 1px;
+}
+
 .nav .content {
   height: 100%;
 }

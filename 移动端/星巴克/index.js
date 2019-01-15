@@ -1,7 +1,7 @@
-$(".container .nav .icon").on("click", function() {
+/* $(".container .nav .icon").on("click", function() {
   console.log("a");
   $(".overlay").fadeIn("fast", function() {
-    $(".overlay").show();
+    $(".overlay").show("fast");
   });
   $(".no-content li").animate(
     {
@@ -19,4 +19,15 @@ $(".close").on("click", function() {
   $(".no-content li").animate({
     fontSize: "80px"
   });
+});
+ */
+
+$(".icon").click(function() {
+  $(".overlay").addClass("active");
+  console.log('a');
+  
+});
+
+$(".close").click(function() {
+  $(".overlay").removeClass("active");
 });
