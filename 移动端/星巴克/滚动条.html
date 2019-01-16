@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .div1 {
+        overflow: hidden;
+      }
+
+      .div2 {
+        width: 500px;
+        height: 80px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        margin-bottom: -50px;
+        padding-bottom: 50px;
+      }
+
+      .div3 {
+        background-color: #f00;
+        margin-right: 20px;
+        width: 80px;
+        height: 80px;
+        display: inline-block;
+      }
+
+      .btn {
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1">
+      <div class="div2">
+        <div class="div3">1</div>
+        <div class="div3">2</div>
+        <div class="div3">3</div>
+        <div class="div3">4</div>
+        <div class="div3">5</div>
+        <div class="div3">6</div>
+        <div class="div3">7</div>
+        <div class="div3">8</div>
+        <div class="div3">9</div>
+        <div class="div3">10</div>
+      </div>
+    </div>
+    <div class="btn">
+      <button class="left">向左</button> <button class="right">向右</button>
+    </div>
+
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script>
+      /*  $(".div2").scroll(function() {
+        console.log($(this).scrollLeft() + $(this).get(0).scrollWidth);
+        console.log($(this).width());
+      }); */
+      //console.log($(".div2").get(0).scrollWidth);
+      $(".left").click(function() {
+        run("left");
+      });
+      $(".right").click(function() {
+        run("right");
+      });
+
+      function run(dir) {
+        var nowScrollLeft = $(".div2").scrollLeft();
+        var whichBtn =
+          dir == "left" ? nowScrollLeft - 300 : nowScrollLeft + 300;
+        $(".div2").animate(
+          {
+            scrollLeft: whichBtn
+          },
+          1000,
+          function() {
+            btnShow();
+          }
+        );
+      }
+      $(".div2").scroll(function() {
+        btnShow();
+      });
+
+      function btnShow() {
+        $(".left").show();
+        $(".right").show();
+
+        if ($(".div2").scrollLeft() == 0) {
+          $(".left").hide();
+        } else if (
+          $(".div2").width() + $(".div2").scrollLeft() >=
+          $(".div2").get(0).scrollWidth
+        ) {
+          $(".right").hide();
+        }
+      }
+    </script>
+  </body>
+</html>
