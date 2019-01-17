@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <form action="">
-        <input type="email">
-        <input type="number" max="120" min="20" step="5">
-        <input type="range" max="120" min="20">
-        <input type="submit" value="提交">
+      <input type="email" />
+      <input type="number" max="120" min="20" step="5" />
+      <input type="range" max="120" min="20" />
+      <input type="submit" value="提交" />
     </form>
-</body>
+
+    <script>
+      var obj1 = {
+        name: "zhangsan",
+        age: "18"
+      };
+
+      function clone(obj) {
+        var obj2 = {};
+        obj2 = obj;
+        obj.name = "lisi";
+
+        return obj2;
+      }
+
+      var obj3 = clone(obj1);
+      console.log(obj3);
+    </script>
+  </body>
 </html>
