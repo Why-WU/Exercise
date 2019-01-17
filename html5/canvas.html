@@ -18,36 +18,34 @@
     <script>
       var oCan = document.getElementById("can");
       var context = oCan.getContext("2d");
-      /*   oCan.addEventListener("mousedown", function(e) {
+      oCan.addEventListener("mousedown", function(e) {
         context.beginPath();
         context.moveTo(e.clientX, e.clientY);
-        // console.log(oMouseX, oMouseY);
         var fn = function(e) {
           context.lineTo(e.clientX, e.clientY);
           context.strokeStyle = "white";
           context.lineWidth = "1";
           context.stroke();
-          //   console.log(oMouseX, oMouseY);
         };
         oCan.addEventListener("mousemove", fn);
         oCan.addEventListener("mouseup", function() {
           oCan.removeEventListener("mousemove", fn);
         });
-      }); */
+      });
 
-      oCan.addEventListener("mousedown", function fn(e) {
+      
+       /*  oCan.addEventListener("mousedown", function fn(e) {
         context.beginPath();
         context.moveTo(e.clientX, e.clientY);
         context.lineTo(e.clientX, e.clientY);
         context.strokeStyle = "white";
         context.lineWidth = "10";
         context.stroke();
-        // oCan.addEventListener("mousemove", fn);
-        /* oCan.addEventListener("mouseup", function() {
-          oCan.removeEventListener("mousemove", fn);
-        }); */
-      });
-
+        oCan.addEventListener("mousemove", fn);
+        // oCan.addEventListener("mouseup", function() {
+        //   oCan.removeEventListener("mousemove", fn);
+        // });
+      }); */
     </script>
   </body>
 </html>
