@@ -17,10 +17,10 @@
 
       function getCookie(key) {
         var nowCookie = document.cookie;
-        var arr = [];
-        arr = nowCookie.split(";");
+        var arr = [];                                //把获取到的内容存在数组里
+        arr = nowCookie.split(";");                 //以分号为分割标志分割数组并替换原来的数组内容
         for (var i = 0; i < arr.length; i++) {
-          if (arr[i].split("=")[0].trim() == key) {
+          if (arr[i].split("=")[0].trim() == key) { //以等号为分割标志分割每个元素，并去空格，对比key值
             return arr[i].split("=")[1];
           }
         }
@@ -28,13 +28,13 @@
 
       function delCookie(key) {
         var timer = new Date();
-        timer.setDate(timer.getDate() - 100);
+        timer.setDate(timer.getDate() - 1);   //当前时间的上一天就会过期
         document.cookie = key + "=null;expires=" + timer.toUTCString();
       }
 
-      setCookie("abc", "fff", 2);
-      console.log(getCookie("abc"));
-      delCookie("abc")
+      // setCookie("abc", "fff", 2);
+      // console.log(getCookie("abc"));
+      // delCookie("abc")
     </script>
   </body>
 </html>

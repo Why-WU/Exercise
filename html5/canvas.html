@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <style>
+      #can {
+        background-color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="can" width="400px" height="400px"></canvas>
+
+    <script>
+      var oCan = document.getElementById("can");
+      var context = oCan.getContext("2d");
+      /*   oCan.addEventListener("mousedown", function(e) {
+        context.beginPath();
+        context.moveTo(e.clientX, e.clientY);
+        // console.log(oMouseX, oMouseY);
+        var fn = function(e) {
+          context.lineTo(e.clientX, e.clientY);
+          context.strokeStyle = "white";
+          context.lineWidth = "1";
+          context.stroke();
+          //   console.log(oMouseX, oMouseY);
+        };
+        oCan.addEventListener("mousemove", fn);
+        oCan.addEventListener("mouseup", function() {
+          oCan.removeEventListener("mousemove", fn);
+        });
+      }); */
+
+      oCan.addEventListener("mousedown", function fn(e) {
+        context.beginPath();
+        context.moveTo(e.clientX, e.clientY);
+        context.lineTo(e.clientX, e.clientY);
+        context.strokeStyle = "white";
+        context.lineWidth = "10";
+        context.stroke();
+        // oCan.addEventListener("mousemove", fn);
+        /* oCan.addEventListener("mouseup", function() {
+          oCan.removeEventListener("mousemove", fn);
+        }); */
+      });
+
+    </script>
+  </body>
+</html>
