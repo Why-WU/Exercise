@@ -1,4 +1,55 @@
-$color:'blue';
-.box{
-    color:$color;
+@charset "utf-8";
+$color: "blue";
+.box {
+  color: $color;
 }
+
+.box1 {
+  color: $color;
+}
+
+.box2 {
+  color: #000;
+}
+
+@mixin test($w: 10px, $h: 10px) {
+  width: $w;
+  height: $h;
+}
+
+.div1 {
+  @include test(200px, 300px);
+}
+
+.div2 {
+  @include test;
+}
+
+.div3 {
+  color: #000;
+  .div4 {
+    color: #666;
+  }
+}
+
+.div5{
+    color: #333;
+    &-.div6{
+        color: #333;
+        background-color: #fff;
+    }
+}
+
+.div6{
+    width: 1000px;
+    height: 1000px;
+    border: {
+        left: 100px;
+        style:solid;
+    }
+}
+
+/*這段我都不要了！
+哈哈哈！*/
+/*!		why 	*/
+

@@ -1,2 +1,40 @@
-.box{color:"blue"}
+@charset "UTF-8";
+.box {
+  color: "blue"; }
+
+.box1 {
+  color: "blue"; }
+
+.box2 {
+  color: #000; }
+
+.div1 {
+  width: 200px;
+  height: 300px; }
+
+.div2 {
+  width: 10px;
+  height: 10px; }
+
+.div3 {
+  color: #000; }
+  .div3 .div4 {
+    color: #666; }
+
+.div5 {
+  color: #333; }
+  .div5-.div6 {
+    color: #333;
+    background-color: #fff; }
+
+.div6 {
+  width: 1000px;
+  height: 1000px;
+  border-left: 100px;
+  border-style: solid; }
+
+/*這段我都不要了！
+哈哈哈！*/
+/*!		why 	*/
+
 /*# sourceMappingURL=class1.css.map */
