@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* 笔记 
+    
+    对象的解构赋值是按照键值对对应的方式解构赋值的。但是可以用冒号的方式赋给另一个变量
+    数组的解构赋值是按照索引顺序对应的。
+    字符串的解构赋值和数组类似。
+
+    解构赋值可以赋默认值。
+    
+     */
+
+     /*  let obj = {
+        name: "zhangsan",
+        age: "18"
+      };
+      let { name, age } = obj; //可以
+      let { a, b } = obj; //不可以
+      let { name: a, age: b } = obj; //可以 */
+
+
+     /*  var str = 'abc';
+      console.log(str[1]);  //输出b */
+
+
+     /*  let str = 'abcdefg';
+      let[a,b,c,d,e,f,g] = str;
+      console.log(a,b,c,d,e,f,g); */
+
+
+    var a = 10;
+    var b = 20;
+    [a,b] = [b,a];
+    // b = [a,a=b][0];
+    console.log(a,b);
+
+
+      
+    
+
+      /* c = a;
+      a = b;
+      b = c;
+      console.log(a,b) */
+      
+
+
+    </script>
+  </body>
+</html>
