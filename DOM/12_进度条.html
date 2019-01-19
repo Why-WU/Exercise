@@ -40,7 +40,7 @@
         oDiv2.style.width = step + "%";
         oDiv2.innerHTML = step + "%";
         if (oDiv2.offsetWidth < oDiv1.offsetWidth) {
-          requestAnimationFrame(run);   //raf 刚好和浏览器刷新频率相同
+          requestAnimationFrame(run);   // 笔记： raf 刚好和浏览器刷新频率相同
         }
       }
       run();
