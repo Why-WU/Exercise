@@ -27,14 +27,16 @@
         })(i); //闭包
       } */
 
-      /* function foo() {
+      function foo() {
         var a = 10;
         function foo2() {
-          console.log(a);
+          var b = a;
+          console.log(b);
         }
+        return foo2;
       }
       var test = foo();
-      test(); //闭包 */
+      test(); //闭包
 
 
       /* 笔记： const 不能修改的是地址 栈内存的值不能被修改 */
