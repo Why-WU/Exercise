@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var str = [1, 2, 3, 4, 5, "5", 4];
+      var nStr = new Set(str);
+      str = Array.from(nStr);
+      console.log(str);
+
+      /* var arr = [];
+      var str = [1, 2, 1, 2, 3, 4, 5, "5", 4];
+      for (val of str) {
+        if (!arr.includes(val)) {
+          arr.push(val);
+        }
+      }
+      console.log(arr); */
+    </script>
+  </body>
+</html>
