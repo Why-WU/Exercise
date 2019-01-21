@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+    </ul>
+
+    <script>
+      /* 笔记:
+
+        Array.from()转换要有一个关键字段，length:(一个数字),数字是多少转换前多少个  
+
+        copyWithin()不包括结束位置      
+
+        arr.find(function(val,key,arr){
+            要有返回值，return一个判断语句(布尔值)
+        })
+        
+        对象遍历用for in ，数组遍历用for of
+         */
+
+      /*     var aLi = document.getElementsByTagName("li");
+      var liS = document.querySelectorAll("li");
+      aLi = Array.from(aLi);
+      console.log(aLi, liS); */
+
+      /*       let json = {
+        "0": "商品1",
+        "1": "商品2",
+        "2": "商品3",
+        length: 3
+      };
+      json = Array.from(json);
+      console.log(json); */
+
+      /* let arr = [1,2,3,4,5,6,7,8,9];   
+       arr.copyWithin(1,4,7);
+      console.log(arr); */
+
+      /* let arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      var num = arr1.find(function(val, key, arr) {
+        // console.log(val, key, arr);
+        return val > 5;
+      });
+      console.log(num); */
+
+      /* let arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      var num = arr1.findIndex(function(val, key, arr) {
+        // console.log(val, key, arr);
+        console.log(val);
+        return val > 5;
+      });
+      console.log(num); */
+    </script>
+  </body>
+</html>

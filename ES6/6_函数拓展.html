@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
-<body>
-    
-
+  </head>
+  <body>
     <script>
-    /* 笔记
+      /* 笔记
+
+    方法名.length  返回没有指定默认值的参数个数，但是，查询从前向后，遇到了一个有默认值的参数则后面的都不会计算到length里。
 
     每一个函数系统都会分配一个原型，所有的方法和属性都可以写在原型上
 
@@ -20,8 +20,30 @@
     
     
      */
-    
-    
+
+      /* function foo(age, name = "zs") {
+        console.log(name);
+        console.log(age);
+      }
+      //   foo("ls", 20);
+      // foo(undefined,30)
+      console.log(foo.length);
+      console.log(foo.name);
+ */
+
+      /* "use strict";
+      var str = "123";
+      console.log(str); */
+
+      function Person() {
+        this.name = "zs";
+        this.age = "18";
+        this.showInto = function() {
+          console.log(this.name);
+          console.log(this.age);
+        }; 
+      }
+      Person();
     </script>
-</body>
+  </body>
 </html>
