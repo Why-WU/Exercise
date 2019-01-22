@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <script src="./jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <script>
+      /*  笔记：
+        promise中，catch会捕捉前面所有的错误，有错误就会执行。then只要前面没错误下一个the就会执行。 
+        
+        
+         */
+
+      /* $.get("./a.json", function(res) {
+        $.get("./b.json", function(res) {
+          $.get("./c.json", function(res) {
+            console.log(res);
+          });
+        });
+      }); */
+
+      /* new Promise(function(resolve, reject) {
+        $.get("./a.json", function(res) {
+          console.log(res);
+          resolve();
+          //   reject();
+        });
+      })
+        .then(function() {
+          console.log("then执行了");
+          return "123";
+        })
+        .catch(function() {
+          console.log("catch执行了");
+        })
+        .then(function() {
+          console.log("then执行了");
+        }); */
+
+      //   new Promise(function(resolve, reject) {
+      //     $.get("./a.json", function(res) {
+      //       resolve();
+      //     //   reject();
+      //     });
+      //   }).then(
+      //     function() {
+      //       console.log("成功");
+      //       $.get("./a.json", function(res) {
+      //         // resolve();
+      //         // reject();
+      //       });
+      //     },
+      //     function() {
+      //       console.log("失败");
+      //     }
+      //   );
+    </script>
+  </body>
 </html>
