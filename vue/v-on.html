@@ -8,17 +8,30 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
-    <div id="app"><button @click="test(2,$event)">按钮</button> {{ num }}</div>
+    <div id="app">
+      <button @click="test1">按钮</button> {{ num1 }}
+      <button @click="test2">按钮</button> {{ num2 }}
+      <div>{{ sum }}</div>
+    </div>
 
     <script>
       let vm = new Vue({
         el: "#app",
         data: {
-          num: 1
+          num1: 1,
+          num2: 1
         },
         methods: {
-          test(i, e) {
-            this.num += i;
+          test1() {
+            this.num1++;
+          },
+          test2() {
+            this.num2++;
+          }
+        },
+        computed: {
+          sum() {
+            return this.num1 + this.num2;
           }
         }
       });
