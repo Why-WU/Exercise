@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+      }
+      #list {
+        height: 100px;
+      }
+      #list p {
+        float: left;
+        line-height: 100px;
+        margin-right: 50px;
+      }
+      #list button {
+        line-height: 100px;
+      }
+      #menu span,
+      #list input {
+        margin-right: 50px;
+      }
+      .active {
+        background-color: red;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="todolist">
+      <div>
+        <input type="text" name="checkbox" />
+        <button name="checkbox">搜索</button>
+      </div>
+      <div>
+        商品名称<input type="text" name="add" /> 商品价格<input
+          type="text"
+          name="add"
+        />
+        <button name="add">＋增加</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>选择</th>
+            <th>商品名称</th>
+            <th>商品价格</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="(item,index) in obj"
+            :class="{active:item.isSel}"
+            @click="chose(item.isSel,index,$event)"
+          >
+            <td><input type="checkbox" :value="item.id" /></td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.price }}</td>
+            <td><button @click="del(item.id,$event)">删除</button></td>
+          </tr>
+          <tr>
+            <td colspan="3">{{ sum }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      let vm = new Vue({
+        el: "#todolist",
+        price: 0,
+        name: "",
+        data: {
+          obj: [
+            { id: 1, name: "衣服1", price: "1", isSel: false },
+            { id: 2, name: "衣服2", price: "12", isSel: false },
+            { id: 3, name: "衣服3", price: "123", isSel: false },
+            { id: 4, name: "衣服4", price: "1234", isSel: false },
+            { id: 5, name: "衣服5", price: "12345", isSel: false }
+          ]
+        },
+        methods: {
+          del(id) {
+            let newArry = [];
+            this.obj.forEach(function(val) {
+              if (val.id != id) {
+                newArry.push(val);
+              }
+              return newArry;
+            });
+            this.obj = newArry;
+          },
+          chose(isSel, index) {
+            if (isSel == true) {
+              isSel = false;
+            } else {
+              isSel = true;
+            }
+            this.obj[index].isSel = isSel;
+          }
+        },
+        computed: {
+          sum() {
+            let add = 0;
+            this.obj.forEach(function(val,index) {
+              if (val.isSel) {
+                add += val.price;
+              }
+            });
+            return add;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
