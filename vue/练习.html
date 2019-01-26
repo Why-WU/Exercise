@@ -37,15 +37,13 @@
   <body>
     <div id="todolist">
       <div>
-        <input type="text" name="checkbox" />
-        <button name="checkbox">搜索</button>
+        <input type="text" v-model="seachText" />
+        <input type="button" value="搜索" @click="seach" />
       </div>
       <div>
-        商品名称<input type="text" name="add" /> 商品价格<input
-          type="text"
-          name="add"
-        />
-        <button name="add">＋增加</button>
+        <input type="text" v-model="addName" placeholder="名称" />
+        <input type="number" v-model="addPrice" placeholder="价格" />
+        <input type="button" value="添加" @click="add" />
       </div>
       <table>
         <thead>
@@ -60,15 +58,18 @@
           <tr
             v-for="(item,index) in obj"
             :class="{active:item.isSel}"
-            @click="chose(item.isSel,index,$event)"
+            @click="item.isSel=!item.isSel"
           >
             <td><input type="checkbox" :value="item.id" /></td>
             <td>{{ item.name }}</td>
             <td>{{ item.price }}</td>
-            <td><button @click="del(item.id,$event)">删除</button></td>
+            <td>
+              <input type="button" @click="del(item.id,$event)" value="删除" />
+            </td>
           </tr>
           <tr>
             <td colspan="3">{{ sum }}</td>
+            <td><button @click="choseDel">选中删除</button></td>
           </tr>
         </tbody>
       </table>
@@ -79,13 +80,14 @@
         el: "#todolist",
         price: 0,
         name: "",
+        nowId:"5",
         data: {
           obj: [
-            { id: 1, name: "衣服1", price: "1", isSel: false },
-            { id: 2, name: "衣服2", price: "12", isSel: false },
-            { id: 3, name: "衣服3", price: "123", isSel: false },
-            { id: 4, name: "衣服4", price: "1234", isSel: false },
-            { id: 5, name: "衣服5", price: "12345", isSel: false }
+            { id: 1, name: "衣服1", price: 1, isSel: false },
+            { id: 2, name: "衣服2", price: 12, isSel: false },
+            { id: 3, name: "衣服3", price: 123, isSel: false },
+            { id: 4, name: "衣服4", price: 1234, isSel: false },
+            { id: 5, name: "衣服5", price: 12345, isSel: false }
           ]
         },
         methods: {
@@ -98,25 +100,32 @@
               return newArry;
             });
             this.obj = newArry;
+            console.log("1");
           },
-          chose(isSel, index) {
-            if (isSel == true) {
-              isSel = false;
-            } else {
-              isSel = true;
-            }
-            this.obj[index].isSel = isSel;
+          choseDel() {
+            let newArry = [];
+            this.obj.forEach(function(val) {
+              if (!val.isSel) {
+                newArry.push(val);
+              }
+              return newArry;
+            });
+            this.obj = newArry;
+          },
+          add(){
+            id=++this.nowId;
+            
           }
         },
         computed: {
           sum() {
-            let add = 0;
-            this.obj.forEach(function(val,index) {
+            let sumNum = 0;
+            this.obj.forEach(function(val) {
               if (val.isSel) {
-                add += val.price;
+                sumNum += val.price;
               }
             });
-            return add;
+            return sumNum;
           }
         }
       });
