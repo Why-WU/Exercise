@@ -41,8 +41,8 @@
         <input type="button" value="搜索" @click="seach" />
       </div>
       <div>
-        <input type="text" v-model="addName" placeholder="名称" />
-        <input type="number" v-model="addPrice" placeholder="价格" />
+        <input type="text" v-model="name" placeholder="名称" />
+        <input type="number" v-model="price" placeholder="价格" />
         <input type="button" value="添加" @click="add" />
       </div>
       <table>
@@ -60,7 +60,7 @@
             :class="{active:item.isSel}"
             @click="item.isSel=!item.isSel"
           >
-            <td><input type="checkbox" :value="item.id" /></td>
+            <td><input type="checkbox" v-model="cb" :value="item.id" /></td>
             <td>{{ item.name }}</td>
             <td>{{ item.price }}</td>
             <td>
@@ -78,10 +78,11 @@
     <script>
       let vm = new Vue({
         el: "#todolist",
-        price: 0,
-        name: "",
-        nowId:"5",
         data: {
+          price: 0,
+          name: "",
+          nowId: "5",
+          seachText: "",
           obj: [
             { id: 1, name: "衣服1", price: 1, isSel: false },
             { id: 2, name: "衣服2", price: 12, isSel: false },
@@ -100,7 +101,6 @@
               return newArry;
             });
             this.obj = newArry;
-            console.log("1");
           },
           choseDel() {
             let newArry = [];
@@ -112,9 +112,24 @@
             });
             this.obj = newArry;
           },
-          add(){
-            id=++this.nowId;
-            
+          add() {
+            let objAdd = {
+              id: ++this.nowId,
+              name: this.name,
+              price: this.price,
+              isSel: false
+            };
+            this.obj.push(objAdd);
+          },
+          seach() {
+            let arr = [];
+            let _this = this;
+            arr = this.obj.filter(function(val, index) {
+              if (val.name.includes(_this.seachText)) {
+                return arr;
+              }
+            });
+            this.obj = arr;
           }
         },
         computed: {
@@ -126,6 +141,15 @@
               }
             });
             return sumNum;
+          },
+          cb() {
+            let arr = [];
+            this.obj.forEach(function(val, index) {
+              if (val.isSel) {
+                arr.push(val.id);
+              }
+            });
+            return arr;
           }
         }
       });
