@@ -9,8 +9,8 @@
 
 <style scoped>
 div{
-    font-size: 1000;
-    color: red;
+    font-weight: 700;
+    font-size: 50px;
 }
 </style>
 

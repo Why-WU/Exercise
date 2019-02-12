@@ -16,13 +16,29 @@ export default new Router({
     {
       path: "/about",
       name: "about",
-      component: () =>
-        import("./views/About.vue")
+      component: () => import("./views/About.vue")
     },
     {
       path: "/mine",
       name: "mine",
       component: () => import("./views/Mine.vue")
+    },
+    {
+      path: "/test",
+      name: "test",
+      component: () => import("./views/Test.vue"),
+      children: [
+        {
+          path: "test1",
+          name: "test1",
+          component: () => import("./views/Test1.vue")
+        },
+        {
+          path: "test2",
+          name: "test2",
+          component: () => import("./views/Test2.vue")
+        }
+      ]
     }
   ]
 });

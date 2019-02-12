@@ -3,7 +3,10 @@
     <div id="nav">
       <router-link to="/">Home</router-link>|
       <router-link to="/about">About</router-link>|
-      <router-link to="/mine">我的</router-link>
+      <router-link to="/mine">我的</router-link>|
+      <router-link to="/test">test</router-link>|
+      <router-link to="/Test1">子路由1</router-link>|
+      <router-link to="/Test2">子路由2</router-link>
     </div>
     <router-view/>
   </div>
