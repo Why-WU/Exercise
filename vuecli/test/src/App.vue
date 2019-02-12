@@ -5,8 +5,10 @@
       <router-link to="/about">About</router-link>|
       <router-link to="/mine">我的</router-link>|
       <router-link to="/test">test</router-link>|
-      <router-link to="/Test1">子路由1</router-link>|
-      <router-link to="/Test2">子路由2</router-link>
+      <router-link to="/viewstest">别名</router-link>|
+      <router-link :to="{name:'test1',params:{name:'why',age:'23'}}">子路由1</router-link>|
+      <router-link to="/test2/WHY/二十三">子路由2</router-link>
+      <router-link to="/home/HHH/23333">返回首页</router-link>
     </div>
     <router-view/>
   </div>

@@ -26,19 +26,29 @@ export default new Router({
     {
       path: "/test",
       name: "test",
+      alias: "/viewstest",
       component: () => import("./views/Test.vue"),
       children: [
         {
-          path: "test1",
+          path: "/test1",
           name: "test1",
           component: () => import("./views/Test1.vue")
         },
         {
-          path: "test2",
+          path: "/test2/:name/:age",
           name: "test2",
           component: () => import("./views/Test2.vue")
         }
       ]
+    },
+    {
+      path: "/home/:name/:age",
+      redirect: "/test2/:name/:age"
+    },
+    {
+      path: "*",
+      name: "error",
+      component: () => import("./views/Error404.vue")
     }
   ]
 });
