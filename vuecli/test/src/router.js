@@ -46,6 +46,10 @@ export default new Router({
       redirect: "/test2/:name/:age"
     },
     {
+      path: "/redirect/:name/:age",
+      redirect: "/test2/:name/:age"
+    },
+    {
       path: "*",
       name: "error",
       component: () => import("./views/Error404.vue")

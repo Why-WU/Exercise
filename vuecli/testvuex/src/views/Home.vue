@@ -7,17 +7,12 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: "home",
+  name: 'home',
   components: {
     HelloWorld
   }
-};
+}
 </script>
-
-/* 笔记：
-父组件向子组件传值一般用props
-子组件向父组件传值this.$emit
- */

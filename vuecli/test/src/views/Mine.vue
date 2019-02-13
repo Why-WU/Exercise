@@ -11,6 +11,7 @@
 div{
     font-weight: 700;
     font-size: 50px;
+    color: red;
 }
 </style>
 
