@@ -28,5 +28,7 @@ export default new Vuex.Store({
     count1(state) {
       return state.count + 1000;
     }
+
+    
   }
 });
