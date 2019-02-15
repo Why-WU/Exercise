@@ -1,14 +1,29 @@
 <template>
   <div id="app">
-    <div id="nav">
-     
-    </div>
+    <Navigator></Navigator>
+    <router-view></router-view>
   </div>
 </template>
 
+<script>
+import Navigator from "@/components/Navigator.vue";
+export default {
+  data() {
+    return {
+      
+    };
+  },
+
+  components: {
+    Navigator
+  },
+  
+};
+</script>
+
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
