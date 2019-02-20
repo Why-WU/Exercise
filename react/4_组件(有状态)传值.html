@@ -13,25 +13,41 @@
     <div id="root"></div>
 
     <script type="text/babel">
+      class Com extends React.Component {
+        constructor(props) {
+          super(props);
+        }
+        change() {
+          this.props.changeC(1000);
+        }
+        render() {
+          return <button onClick={this.change.bind(this)}>change</button>;
+        }
+      }
+
       class Add extends React.Component {
         constructor(props) {
           super(props);
-          this.state = { count: 0 };
+          this.state = {
+            count: 0
+          };
+          this.changeP = this.changeP.bind(this);
         }
-        add(num) {
+        changeP(num) {
           this.setState({
-            count: this.state.count + num
+            conut: num
           });
         }
         render() {
           return (
             <div>
               <h1>{this.state.count}</h1>
-              <button onClick={this.add.bind(this, 10)}>add</button>
+              <Com changeC={this.changeP} />
             </div>
           );
-        } //不能加逗号
+        }
       }
+
       ReactDOM.render(<Add />, document.getElementById("root"));
     </script>
   </body>
