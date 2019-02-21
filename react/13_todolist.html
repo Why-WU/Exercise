@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script src="./js/react.production.min.js"></script>
+    <script src="./js/react-dom.production.min.js"></script>
+    <script src="./js/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      class TodoList extends React.Component{
+          constructor(props){
+              super(props);
+              this.state={
+                  dataList:[
+                      {
+                          id:1,
+                          name:'上课',
+                          time:'2018-09-14',
+                          futureTime:2
+                      },
+                      {
+                          id:2,
+                          name:'吃饭',
+                          time:'2018-09-14',
+                          futureTime:2
+                      },
+                      {
+                          id:3,
+                          name:'午休',
+                          time:'2018-09-14',
+                          futureTime:2
+                      },
+                      {
+                          id:4,
+                          name:'篮球',
+                          time:'2018-09-14',
+                          futureTime:2
+                      },
+                      {
+                          id:5,
+                          name:'聚会',
+                          time:'2018-09-14',
+                          futureTime:2
+                      },
+                      {
+                          id:6,
+                          name:'上课',
+                          time:'2018-09-14',
+                          futureTime:2
+                      }
+                  ]
+              }
+          }
+                add(newData){
+                  let newArr = this.state.dataList;
+                  newArr.push(newData);
+                  this.setState({
+                      dataList:newArr
+                  })
+              }
+      }
+
+      class TodoNew extends React.Component{
+          constructor(props){
+              super(props)
+              this.state={
+                name:'',
+                time:'',
+                futureTime:''
+              }
+              this.change.bind(this)
+          }
+
+          change(event){
+            event.target.
+          }
+
+          render() {
+              return(
+                <form>
+                    <div>
+                        <input type="text" name='name' placeholder='待办事项' onChange={this.change}></input>
+                    </div>
+                    <div>
+                        <input type="date" name='time' placeholder='年/月/日' onChange={this.change}></input>
+                    </div>
+                    <div>
+                        <input type="text" name='futureTime' placeholder='待办用时' onChange={this.change}></input>
+                    </div>
+                    <button>添加</button>
+                </form>
+              )
+          },
+      }
+      ReactDOM.render(<TodoList/>,doucument.getElementById('root'))
+    </script>
+  </body>
+</html>

@@ -32,12 +32,18 @@
         height: 50px;
         background-color: #000000;
         color: #fff;
+        line-height: 50px;
       }
-      .dia-header:first-child div {
+      .dia-header div:first-child {
         float: left;
+        padding-left: 10px;
       }
-      .dia-header:last-child div {
+      .dia-header div:last-child {
         float: right;
+        padding-right: 10px;
+      }
+      .dia-body{
+          font-size: 100px;
       }
     </style>
   </head>
@@ -68,7 +74,11 @@
             <div>
               <button onClick={this.show.bind(this, "Login")}>登录</button>
               <button onClick={this.show.bind(this, "Registered")}>注册</button>
-              <DialogBox title={this.state.title} isShow={this.state.isShow} close={this.close.bind(this)} />
+              <DialogBox
+                title={this.state.title}
+                isShow={this.state.isShow}
+                close={this.close.bind(this)}
+              />
             </div>
           );
         }
@@ -76,13 +86,16 @@
 
       function DialogBox(props) {
         return (
-          <div class="dia-bg" style={{display:props.isShow?'block':'none'}}>
+          <div
+            class="dia-bg"
+            style={{ display: props.isShow ? "block" : "none" }}
+          >
             <div class="dia-box">
               <header class="dia-header">
                 <div>{props.title}</div>
                 <div onClick={props.close}>X</div>
               </header>
-              <div>{props.title == "Login" ? <Login /> : <Registered />}</div>
+              <div class='dia-body'>{props.title == "Login" ? <Login /> : <Registered />}</div>
             </div>
           </div>
         );
