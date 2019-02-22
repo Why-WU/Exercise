@@ -14,96 +14,217 @@
     <script src="./js/react.production.min.js"></script>
     <script src="./js/react-dom.production.min.js"></script>
     <script src="./js/browser.min.js"></script>
+    <style>
+      .wrapper {
+        padding: 20px;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="text/babel">
-      class TodoList extends React.Component{
-          constructor(props){
-              super(props);
-              this.state={
-                  dataList:[
-                      {
-                          id:1,
-                          name:'上课',
-                          time:'2018-09-14',
-                          futureTime:2
-                      },
-                      {
-                          id:2,
-                          name:'吃饭',
-                          time:'2018-09-14',
-                          futureTime:2
-                      },
-                      {
-                          id:3,
-                          name:'午休',
-                          time:'2018-09-14',
-                          futureTime:2
-                      },
-                      {
-                          id:4,
-                          name:'篮球',
-                          time:'2018-09-14',
-                          futureTime:2
-                      },
-                      {
-                          id:5,
-                          name:'聚会',
-                          time:'2018-09-14',
-                          futureTime:2
-                      },
-                      {
-                          id:6,
-                          name:'上课',
-                          time:'2018-09-14',
-                          futureTime:2
-                      }
-                  ]
+      class TodoList extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            dataList: [
+              {
+                id: 0,
+                name: "上课",
+                time: "2018-09-14",
+                futureTime: 2
+              },
+              {
+                id: 1,
+                name: "吃饭",
+                time: "2018-09-14",
+                futureTime: 2
+              },
+              {
+                id: 2,
+                name: "午休",
+                time: "2018-09-14",
+                futureTime: 2
+              },
+              {
+                id: 3,
+                name: "篮球",
+                time: "2018-09-14",
+                futureTime: 2
+              },
+              {
+                id: 4,
+                name: "聚会",
+                time: "2018-09-14",
+                futureTime: 2
+              },
+              {
+                id: 5,
+                name: "上课",
+                time: "2018-09-14",
+                futureTime: 2
               }
-          }
-                add(newData){
-                  let newArr = this.state.dataList;
-                  newArr.push(newData);
-                  this.setState({
-                      dataList:newArr
-                  })
-              }
+            ]
+          };
+          this.add = this.add.bind(this);
+          this.change = this.change.bind(this);
+        }
+        add(newData) {
+          let newArr = this.state.dataList;
+          newArr.push(newData);
+          this.setState({
+            dataList: newArr
+          });
+        }
+        change(newData) {
+          this.setState({
+            dataList: newData
+          });
+        }
+        render() {
+          return (
+            <div>
+              <div>
+                <TodoNew pushNewData={this.add} />
+              </div>
+              <div>
+                <TodoNewData
+                  changeData={this.change}
+                  dataItme={this.state.dataList}
+                />
+              </div>
+            </div>
+          );
+        }
       }
 
-      class TodoNew extends React.Component{
-          constructor(props){
-              super(props)
-              this.state={
-                name:'',
-                time:'',
-                futureTime:''
-              }
-              this.change.bind(this)
-          }
+      class TodoNew extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            name: "",
+            time: "",
+            futureTime: ""
+          };
+          this.change = this.change.bind(this);
+          this.toSubmit = this.toSubmit.bind(this);
+        }
 
-          change(event){
-            event.target.
-          }
+        change(event) {
+          this.setState({
+            [event.target.name]: event.target.value
+          });
+        }
+        toSubmit(event) {
+          let id = 5;
+          let newData = {
+            name: this.state.name,
+            time: this.state.time,
+            futureTime: parseInt(this.state.futureTime),
+            id: ++id
+          };
+          this.props.pushNewData(newData);
+        }
 
-          render() {
-              return(
-                <form>
-                    <div>
-                        <input type="text" name='name' placeholder='待办事项' onChange={this.change}></input>
-                    </div>
-                    <div>
-                        <input type="date" name='time' placeholder='年/月/日' onChange={this.change}></input>
-                    </div>
-                    <div>
-                        <input type="text" name='futureTime' placeholder='待办用时' onChange={this.change}></input>
-                    </div>
-                    <button>添加</button>
-                </form>
-              )
-          },
+        render() {
+          return (
+            <div class="wrapper">
+              <form>
+                <div class="row">
+                  <div class="col">
+                    <input
+                      type="text"
+                      name="name"
+                      class="form-control"
+                      placeholder="待办事项"
+                      onChange={this.change}
+                    />
+                  </div>
+                  <div class="col">
+                    <input
+                      type="date"
+                      name="time"
+                      class="form-control"
+                      onChange={this.change}
+                    />
+                  </div>
+                  <div class="col">
+                    <input
+                      type="text"
+                      name="futureTime"
+                      class="form-control"
+                      placeholder="待办用时"
+                      onChange={this.change}
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onClick={this.toSubmit}
+                  >
+                    添加
+                  </button>
+                </div>
+              </form>
+            </div>
+          );
+        }
       }
-      ReactDOM.render(<TodoList/>,doucument.getElementById('root'))
+      class TodoNewData extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            dataList: [],
+            addNum: 0
+          };
+        }
+        componentDidMount() {
+          this.setState({
+            dataList: this.props.dataItme
+          });
+        }
+
+        render() {
+          let newDOM = this.props.dataItme.map(itme => {
+            return (
+              <tr>
+                <td />
+                <td>{itme.name}</td>
+                <td>{itme.time}</td>
+                <td>{itme.futureTime}</td>
+                <td>
+                  <button type="button" class="btn btn-danger">
+                    删除
+                  </button>
+                </td>
+              </tr>
+            );
+          });
+          return (
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">待办事项</th>
+                  <th scope="col">时间</th>
+                  <th scope="col">待办用时</th>
+                  <th scope="col">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                {newDOM}
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Larry</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>
+          );
+        }
+      }
+      ReactDOM.render(<TodoList />, document.getElementById("root"));
     </script>
   </body>
 </html>
