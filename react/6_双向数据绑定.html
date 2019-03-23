@@ -38,15 +38,79 @@
       }
       ReactDOM.render(<TestForm />, document.getElementById("root")); */
 
-      class Test extends React.Component {
-        constructor(props){
+      class Number extends React.Component {
+        constructor(props) {
           super(props);
-          this.state={
-            inp:''
+          this.state = {
+            addNum: ""
           };
+          this.makeNume = this.makeNume.bind(this);
         }
-        change()
+
+        makeNume() {
+          console.log(1);
+          
+          let oNum = Math.ceil(100)
+          this.setState = ({
+            addNum: oNum
+          }),console.log(this.state.addNum);
+          console.log(this.state.addNum)
+        }
+
+        componentWillUpdate(){
+          
+          this.makeNume()
+        
+        }
+
+        render() {
+          return (
+            <div>
+              <input
+                type="text"
+                onMakeNume={this.makeNume()}
+                value={this.state.addNums}
+              />
+            </div>
+          );
+        }
       }
+      ReactDOM.render(<Number />, document.getElementById("root"));
+
+      // class Toggle extends React.Component {
+      /*   constructor(props) {
+          super(props);
+          this.state = {
+            isToggleOn: true,
+            count: 0
+          };
+
+          // This binding is necessary to make `this` work in the callback
+          this.handleClick = this.handleClick.bind(this);
+        }
+
+        handleClick() {
+          console.log("第" + this.state.count + "次");
+          this.setState(prevState => ({
+            isToggleOn: !prevState.isToggleOn,
+            count: this.state.count + 1
+          }));
+        }
+
+        render() {
+          return (
+            <div>
+              
+              会自动执行
+              <button onClick={this.handleClick()}>
+                {this.state.isToggleOn ? "ON" : "OFF"}
+              </button>
+             
+            </div>
+          );
+        }
+      }
+      ReactDOM.render(<Toggle />, document.getElementById("root")); */
     </script>
   </body>
 </html>

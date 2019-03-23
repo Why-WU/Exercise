@@ -1,0 +1,35 @@
+<html>
+
+<head>
+
+<title></title>
+<script type="text/javascript"> 
+function add(){ 
+var selObj=document.getElementById("sel"); 
+var valObj=document.getElementById("val"); 
+var texObj=document.getElementById("tex");
+
+//关键是这几句 
+var Option=document.createElement("OPTION"); 
+Option.value=valObj.value; 
+Option.text=texObj.value;
+
+selObj.options.add(Option); 
+}
+
+</script> 
+</head>
+
+<body>
+<select id="sel"></select>
+
+<br> 
+value:<input type="text" id="val"> 
+<br> 
+text:<input type="text" id="tex"> 
+<br><br>
+
+<input type="button" value="add" onclick="add()"> 
+</body>
+
+</html>
