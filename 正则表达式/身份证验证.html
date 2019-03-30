@@ -6,12 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
   </head>
+  <input type="text" name="" id="card" />
+  <button id="but">按钮</button>
   <body>
     <script>
-      var a = "230221199608020215";
+      var oCard = document.getElementById("card");
+      var oBut = document.getElementById("but");
+      // var a = "230221199608020218";
       // 函数参数必须是字符串，因为二代身份证号码是十八位，而在javascript中，十八位的数值会超出计算范围，造成不精确的结果，导致最后两位和计算的值不一致，从而该函数出现错误。
       // 详情查看javascript的数值范围
-      function checkIDCard(idcode) {
+       function checkIDCard(idcode) {
         // 加权因子
         var weight_factor = [
           7,
@@ -83,8 +87,9 @@
 
         // 返回验证结果，校验码和格式同时正确才算是合法的身份证号码
         return last === last_no && format ? true : false;
-      }
-      console.log(checkIDCard(a));
+      };
+      // console.log(checkIDCard(oCard.innerHTML));
+      oBut.onclick = console.log(checkIDCard(oCard.value)) 
     </script>
   </body>
 </html>
