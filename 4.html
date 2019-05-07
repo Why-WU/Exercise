@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        const handler = () => console.log('我是头等函数');
+        document.addEventListener('click', handler)
+
+        const firstOder = () => console.log('我是一阶函数')
+        const hightOder = w => w;
+        document.addEventListener('click', hightOder(firstOder))
+
+        const binaryFunction = (a, b) => a + b;
+        const curryUnaryFunction = a => b => a + b;
+        var j = curryUnaryFunction(1); // returns a function: b => 1 + b  ？？？？
+        var k = curryUnaryFunction(1)(2); // returns the number 3
+        console.log(j,k)
+    </script>
+</body>
+
+</html>
