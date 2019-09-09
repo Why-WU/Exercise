@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
-import "./style.css";
 import TodoItem from "./TodoItem";
+import "./style.css";
 
 class TodoList extends Component {
   constructor(props) {
@@ -10,6 +10,9 @@ class TodoList extends Component {
       inputValue: "",
       list: []
     };
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleBtnClick = this.handleBtnClick.bind(this);
+    this.handleItemDelete = this.handleItemDelete.bind(this);
   }
 
   render() {
@@ -20,55 +23,64 @@ class TodoList extends Component {
           <input
             id="insertArea"
             value={this.state.inputValue}
-            onChange={this.handleInputChange.bind(this)}
+            onChange={this.handleInputChange}
             className="input"
           />
-          <button onClick={this.handleBtnClick.bind(this)}>提交</button>
+          <button onClick={this.handleBtnClick}>提交</button>
         </div>
-        <ul>
-          {this.state.list.map((item, index) => {
-            return (
-              <div>
-                <TodoItem content={item} index={index} itemDelete={this.handleItemDelete.bind(this)} />
-                {/*<li
-                    key={index}
-                    onClick={this.handleItemDelete.bind(this, index)}
-                    dangerouslySetInnerHTML={{ __html: item }}
-                  >
-                     {item} 
-                 </li>*/}
-              </div>
-            );
-          })}
-        </ul>
+        <ul>{this.getTodoItem()}</ul>
       </Fragment>
     );
   }
 
-  handleInputChange(e) {
-    this.setState({
-      inputValue: e.target.value
+  getTodoItem() {
+    return this.state.list.map((item, index) => {
+      return (
+        <div key={index}>
+          <TodoItem
+            content={item}
+            index={index}
+            itemDelete={this.handleItemDelete}
+          />
+          {/*<li
+                key={index}
+                onClick={this.handleItemDelete.bind(this, index)}
+                dangerouslySetInnerHTML={{ __html: item }}
+              >
+                 {item} 
+             </li>*/}
+        </div>
+      );
     });
-    // console.log(e.target.value);
+  }
+
+  handleInputChange(e) {
+    const value = e.target.value;
+    this.setState(() => ({
+      inputValue: value
+    }));
   }
 
   handleBtnClick() {
-    this.setState({
-      list: [...this.state.list, this.state.inputValue],
+    //prevState = this.state
+    this.setState(prevState => ({
+      list: [...prevState.list, prevState.inputValue],
       inputValue: ""
-    });
+    }));
+    // this.setState({
+    //   list: [...this.state.list, this.state.inputValue],
+    //   inputValue: ""
+    // });
   }
 
   handleItemDelete(index) {
     // immutable
     // state 不允许做任何改变
-
-    const list = [...this.state.list];
-    list.splice(index, 1);
-    this.setState({
-      list: list
+    this.setState(prevState => {
+      const list = [...prevState.list];
+      list.splice(index, 1);
+      return { list };
     });
-    console.log(index);
   }
 }
 
