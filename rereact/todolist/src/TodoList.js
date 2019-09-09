@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import TodoItem from "./TodoItem";
 import "./style.css";
-
+//当state或者props发生变化当时候，render函数就会重新执行
 class TodoList extends Component {
   constructor(props) {
     super(props);
@@ -25,6 +25,9 @@ class TodoList extends Component {
             value={this.state.inputValue}
             onChange={this.handleInputChange}
             className="input"
+            ref={input => {
+              this.input = input;
+            }}
           />
           <button onClick={this.handleBtnClick}>提交</button>
         </div>
@@ -55,7 +58,8 @@ class TodoList extends Component {
   }
 
   handleInputChange(e) {
-    const value = e.target.value;
+    // const value = e.target.value;
+    const value = this.input.value;
     this.setState(() => ({
       inputValue: value
     }));
