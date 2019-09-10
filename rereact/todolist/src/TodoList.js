@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import TodoItem from "./TodoItem";
+// import axios from "axios";
 import "./style.css";
 //当state或者props发生变化当时候，render函数就会重新执行
 class TodoList extends Component {
@@ -16,7 +17,7 @@ class TodoList extends Component {
   }
 
   render() {
-      console.log('render')
+    console.log("render");
     return (
       <Fragment>
         <div>
@@ -37,25 +38,36 @@ class TodoList extends Component {
     );
   }
 
-  componentWillMount(){
-      console.log('componentWillMount')
+  componentWillMount() {
+    console.log("componentWillMount");
   }
 
-  componentDidMount(){
-      console.log('componentDidMount')
+  componentDidMount() {
+    console.log("componentDidMount");
+    // axios
+    //   .get("/api/todolist")
+    //   .then(res => {
+    //     console.log(res.data);
+    //     this.setState(() => ({
+    //       list:[...res.data]
+    //     }));
+    //   })
+    //   .catch(() => {
+    //     alert("error");
+    //   });
   }
 
-  shouldComponentUpdate(){
-      console.log("shouldComponentUpdate");
-      return true;
+  shouldComponentUpdate() {
+    console.log("shouldComponentUpdate");
+    return true;
   }
 
-  componentWillUpdate(){
-      console.log("componentWillUpdate")
+  componentWillUpdate() {
+    console.log("componentWillUpdate");
   }
 
-  componentDidUpdate(){
-      console.log('componentDidUpdate')
+  componentDidUpdate() {
+    console.log("componentDidUpdate");
   }
 
   getTodoItem() {
