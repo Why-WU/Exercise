@@ -16,16 +16,22 @@ class TodoItem extends Component {
     const { itemDelete, index } = this.props;
     itemDelete(index);
   }
+
+  componentWillReceiveProps() {
+    console.log("chid componentWillReceiveProps");
+  }
+
+  componentWillUnmount() {
+    console.log("chid componentWillUnmount");
+  }
 }
 
 TodoItem.propTypes = {
-  content:PropTypes.string,
-  itemDelete:PropTypes.func,
-  index:PropTypes.number
-}
+  content: PropTypes.string,
+  itemDelete: PropTypes.func,
+  index: PropTypes.number
+};
 
-TodoItem.defaultProps = {
-  
-}
+TodoItem.defaultProps = {};// 默认值设置
 
 export default TodoItem;

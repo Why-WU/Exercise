@@ -16,6 +16,7 @@ class TodoList extends Component {
   }
 
   render() {
+      console.log('render')
     return (
       <Fragment>
         <div>
@@ -34,6 +35,27 @@ class TodoList extends Component {
         <ul>{this.getTodoItem()}</ul>
       </Fragment>
     );
+  }
+
+  componentWillMount(){
+      console.log('componentWillMount')
+  }
+
+  componentDidMount(){
+      console.log('componentDidMount')
+  }
+
+  shouldComponentUpdate(){
+      console.log("shouldComponentUpdate");
+      return true;
+  }
+
+  componentWillUpdate(){
+      console.log("componentWillUpdate")
+  }
+
+  componentDidUpdate(){
+      console.log('componentDidUpdate')
   }
 
   getTodoItem() {
