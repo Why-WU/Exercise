@@ -2,7 +2,7 @@
  * @Author: Harry.Wu
  * @Date: 2019-09-12 22:32:32
  * @LastEditors: Harry.Wu
- * @LastEditTime: 2019-09-13 00:04:49
+ * @LastEditTime: 2019-09-14 16:37:10
  * @Description:
  */
 import React, { Component } from "react";
@@ -17,6 +17,9 @@ class TodoList extends Component {
     this.state = store.getState();
     console.log(this.state);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleStoreChange = this.handleStoreChange.bind(this);
+    this.handleBtnClick = this.handleBtnClick.bind(this);
+    store.subscribe(this.handleStoreChange);
   }
 
   render() {
@@ -29,13 +32,19 @@ class TodoList extends Component {
             style={{ width: "300px", marginRight: "10px" }}
             onChange={this.handleInputChange}
           ></Input>
-          <Button type="primary">提交</Button>
+          <Button type="primary" onClick={this.handleBtnClick}>
+            提交
+          </Button>
         </div>
         <List
           style={{ marginTop: "10px", width: "300px" }}
           bordered
           dataSource={this.state.list}
-          renderItem={item => <List.Item>{item}</List.Item>}
+          renderItem={(item, index) => (
+            <List.Item onClick={this.handleItemDelete.bind(this,index)}>
+              {item}
+            </List.Item>
+          )}
         />
       </div>
     );
@@ -46,7 +55,26 @@ class TodoList extends Component {
       type: "change_input_value",
       value: e.target.value
     };
-    store.dispatch(action)
+    store.dispatch(action);
+  }
+
+  handleStoreChange() {
+    this.setState(store.getState());
+  }
+
+  handleBtnClick() {
+    const action = {
+      type: "add_todo_item"
+    };
+    store.dispatch(action);
+  }
+
+  handleItemDelete(index) {
+    const action = {
+      type: "delete_todo_item",
+      index
+    };
+    store.dispatch(action);
   }
 }
 
