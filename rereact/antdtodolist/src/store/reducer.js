@@ -2,9 +2,15 @@
  * @Author: Harry.Wu
  * @Date: 2019-09-12 23:33:37
  * @LastEditors: Harry.Wu
- * @LastEditTime: 2019-09-14 16:33:19
+ * @LastEditTime: 2019-09-14 16:45:15
  * @Description:
  */
+
+import {
+  CHANGE_INPUT_VALUE,
+  ADD_TODO_ITEM,
+  DELETE_TODO_ITEM
+} from "./actionType";
 
 const defaultState = {
   inputValue: "",
@@ -13,19 +19,19 @@ const defaultState = {
 
 //reducer可以接收state但是不能修改state
 export default (state = defaultState, action) => {
-  if (action.type === "change_input_value") {
+  if (action.type === CHANGE_INPUT_VALUE) {
     const newState = JSON.parse(JSON.stringify(state));
     newState.inputValue = action.value;
     return newState;
   }
-  if (action.type === "add_todo_item") {
+  if (action.type === ADD_TODO_ITEM) {
     const newState = JSON.parse(JSON.stringify(state));
     newState.list.push(newState.inputValue);
     newState.inputValue = "";
     console.log(newState);
     return newState;
   }
-  if (action.type === "delete_todo_item") {
+  if (action.type === DELETE_TODO_ITEM) {
     const newState = JSON.parse(JSON.stringify(state));
     newState.list.splice(action.index, 1);
     return newState;
