@@ -2,7 +2,7 @@
  * @Author: Harry.Wu
  * @Date: 2019-09-12 22:32:32
  * @LastEditors: Harry.Wu
- * @LastEditTime: 2019-09-14 16:43:59
+ * @LastEditTime: 2019-09-14 17:53:58
  * @Description:
  */
 import React, { Component } from "react";
@@ -10,6 +10,7 @@ import "antd/dist/antd.css";
 import { Input } from "antd";
 import { Button, List } from "antd";
 import store from "./store/index";
+import { getInputChangeAction } from "./store/actionCreators";
 
 import {
   CHANGE_INPUT_VALUE,
@@ -57,10 +58,7 @@ class TodoList extends Component {
   }
 
   handleInputChange(e) {
-    const action = {
-      type: CHANGE_INPUT_VALUE,
-      value: e.target.value
-    };
+    const action = getInputChangeAction(e.target.value);
     store.dispatch(action);
   }
 
