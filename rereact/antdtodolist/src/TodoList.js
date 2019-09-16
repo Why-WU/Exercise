@@ -2,7 +2,7 @@
  * @Author: Harry.Wu
  * @Date: 2019-09-12 22:32:32
  * @LastEditors: Harry.Wu
- * @LastEditTime: 2019-09-14 17:53:58
+ * @LastEditTime: 2019-09-15 12:59:14
  * @Description:
  */
 import React, { Component } from "react";
@@ -11,6 +11,7 @@ import { Input } from "antd";
 import { Button, List } from "antd";
 import store from "./store/index";
 import { getInputChangeAction } from "./store/actionCreators";
+import Test from "./test/test";
 
 import {
   CHANGE_INPUT_VALUE,
@@ -32,12 +33,14 @@ class TodoList extends Component {
   render() {
     return (
       <div style={{ marginTop: "10px", marginLeft: "10px" }}>
+        <Test></Test>
         <div>
           <Input
             placeholder="hello"
             value={this.state.inputValue}
-            style={{ width: "300px", marginRight: "10px" }}
+            style={{ width: "300px", marginRight: "10px"}}
             onChange={this.handleInputChange}
+            id='div1'
           ></Input>
           <Button type="primary" onClick={this.handleBtnClick}>
             提交
