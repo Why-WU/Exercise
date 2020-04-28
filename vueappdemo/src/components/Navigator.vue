@@ -2,11 +2,18 @@
   <div :class="activeClass">
     <header>
       <span>首页</span>
-      <h1>{{activeTitle}}</h1>
+      <h1>{{ activeTitle }}</h1>
     </header>
     <nav>
       <ul>
-        <li :class="{'activeClass':item.className==activeClass}" v-for="(item,index) in menuList" :key="index" @click="routerPush(item)">{{item.name}}</li>
+        <li
+          :class="{ activeClass: item.className == activeClass }"
+          v-for="(item, index) in menuList"
+          :key="index"
+          @click="routerPush(item)"
+        >
+          {{ item.name }}
+        </li>
       </ul>
     </nav>
   </div>
@@ -14,7 +21,6 @@
 
 <script>
 export default {
-  
   data() {
     return {
       activeTitle: "电影",
@@ -23,22 +29,22 @@ export default {
         {
           name: "电影",
           path: "/movie",
-          className:"movie"
+          className: "movie",
         },
         {
           name: "聊天",
           path: "/talk",
-          className:"talk"
-        }
-      ]
+          className: "talk",
+        },
+      ],
     };
   },
   methods: {
     routerPush(obj) {
       this.activeTitle = obj.name;
       this.activeClass = obj.className;
-    }
-  }
+    },
+  },
 };
 </script>
 
